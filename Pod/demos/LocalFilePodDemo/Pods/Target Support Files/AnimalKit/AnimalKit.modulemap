@@ -1,0 +1,6 @@
+framework module AnimalKit {
+  umbrella header "AnimalKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
