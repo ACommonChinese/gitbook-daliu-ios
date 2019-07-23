@@ -1,2 +1,0 @@
-# UIGestureRecognier
-
