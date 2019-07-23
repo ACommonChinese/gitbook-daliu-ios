@@ -1,0 +1,16 @@
+PODS:
+  - AnimalKit (1.0.0)
+
+DEPENDENCIES:
+  - AnimalKit (from `./LocalPods/AnimalKit`)
+
+EXTERNAL SOURCES:
+  AnimalKit:
+    :path: "./LocalPods/AnimalKit"
+
+SPEC CHECKSUMS:
+  AnimalKit: c726587f4b456ff65c92f52f634ef242fe92779b
+
+PODFILE CHECKSUM: 178fee2c87bbe70e00fa83dc3aa2e099bd0463fc
+
+COCOAPODS: 1.6.1

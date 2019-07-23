@@ -1,0 +1,9 @@
+platform :ios, '9.0'
+
+workspace 'LocalFilePodDemo'
+use_frameworks!
+inhibit_all_warnings!
+
+target 'LocalFilePodDemo' do  
+  pod 'AnimalKit', :path => './LocalPods/AnimalKit'
+end

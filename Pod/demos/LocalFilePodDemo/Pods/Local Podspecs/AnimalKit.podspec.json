@@ -1,0 +1,19 @@
+{
+  "name": "AnimalKit",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "version": "1.0.0",
+  "homepage": "/Users/banma-623/Desktop/ForDelete/LocalFilePodDemo/LocalPods/AnimalKit",
+  "summary": "nimalKit summary: Animal behaviors encapsulate",
+  "license": "MIT",
+  "authors": {
+    "刘威振": "liuxing8807@126.com"
+  },
+  "source": {
+    "git": "file:/.",
+    "tag": "1.0.0"
+  },
+  "source_files": "*.{h,m}",
+  "exclude_files": "AnimalKit.podspec"
+}
