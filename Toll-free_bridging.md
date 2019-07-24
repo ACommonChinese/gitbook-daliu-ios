@@ -64,3 +64,54 @@ NS_INLINE CF_RETURNS_RETAINED CFTypeRef _Nullable CFBridgingRetain(id _Nullable 
 }
 ```
 
+**swift的toll-free bridging和unmanaged**
+
+[参考王巍博客](https://swifter.tips/toll-free/)
+
+我们在把对象在 NS 和 CF 之间进行转换时，需要向编译器说明是否需要转移内存的管理权。对于不涉及到内存管理转换的情况，在 Objective-C 中我们就直接在转换的时候加上 __bridge 来进行说明，表示内存管理权不变。
+
+```
+NSURL *fileURL = [NSURL URLWithString:@"SomeURL"];
+SystemSoundID theSoundID;
+//OSStatus AudioServicesCreateSystemSoundID(CFURLRef inFileURL,
+//                             SystemSoundID *outSystemSoundID);
+OSStatus error = AudioServicesCreateSystemSoundID(
+        (__bridge CFURLRef)fileURL,
+        &theSoundID);
+```
+
+而在 Swift 中，这样的转换可以直接省掉了，上面的代码可以写为下面的形式，简单了许多：
+
+```
+import AudioToolbox
+
+let fileURL = NSURL(string: "SomeURL")
+var theSoundID: SystemSoundID = 0
+
+//AudioServicesCreateSystemSoundID(inFileURL: CFURL,
+//        _ outSystemSoundID: UnsafeMutablePointer<SystemSoundID>) -> OSStatus
+AudioServicesCreateSystemSoundID(fileURL!, &theSoundID)
+```
+
+在OC中，对于 CF 系的 API，如果 API 的名字中含有 Create，Copy 或者 Retain 的话，在使用完成后，我们需要调用 CFRelease 来进行释放。在Swift中CF 现在也在 ARC 的管辖范围之内了。其实背后的机理一点都不复杂，只不过在合适的地方加上了像 CF_RETURNS_RETAINED 和 CF_RETURNS_NOT_RETAINED 这样的标注。
+
+```
+// CFGetSomething() -> Unmanaged<Something>
+// CFCreateSomething() -> Unmanaged<Something>
+// 两者都没有进行标注，Create 中进行了创建
+
+let unmanaged = CFGetSomething()
+let something = unmanaged.takeUnretainedValue()
+// something 的类型是 Something，直接使用就可以了
+
+let unmanaged = CFCreateSomething()
+let something = unmanaged.takeRetainedValue()
+
+// 使用 something
+
+//  因为在取值时 retain 了，使用完成后进行 release
+unmanaged.release()
+```
+
+这些只有在没有标注的极少数情况下才会用到，如果你只是调用系统的 CF API，而不会去写自己的 CF API 的话，是没有必要关心这些的
+
