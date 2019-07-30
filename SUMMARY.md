@@ -20,6 +20,7 @@
     * [关联属性](Swift/关联属性.md)
     * [Enum列举](Swift/Enum列举.md)
     * [闭包](Swift/闭包.md)
+    * [访问控制](Swift/访问控制.md)
 * [SDWebImage源码剖析](SDWebImage源码剖析/README.md)
     * [SubDemos](SDWebImage源码剖析/SubDemos.md)
     * [缓存](SDWebImage源码剖析/缓存.md)
