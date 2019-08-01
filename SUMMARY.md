@@ -21,6 +21,8 @@
     * [Enum列举](Swift/Enum列举.md)
     * [闭包](Swift/闭包.md)
     * [访问控制](Swift/访问控制.md)
+    * [宏](Swift/宏.md)
+    * [多重optional](Swift/多重optional.md)
 * [SDWebImage源码剖析](SDWebImage源码剖析/README.md)
     * [SubDemos](SDWebImage源码剖析/SubDemos.md)
     * [缓存](SDWebImage源码剖析/缓存.md)
