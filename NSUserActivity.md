@@ -1,6 +1,6 @@
 # NSUserActivity
 
-![这里](https://developer.apple.com/documentation/foundation/nsuseractivity)是Apple官网的说明。
+[这里](https://developer.apple.com/documentation/foundation/nsuseractivity)是Apple官网的说明。
 
 > A representation of the state of your app at a moment in time.
 
@@ -25,7 +25,7 @@
 
 **支持Search Results**
 在未打开任何app的时候，由上往下拖会启用Spotlight:
-![](images/11.png)
+![](images/11.jpg)
 需要深一步了解Core Spotlight，可以参见：![这里](https://developer.apple.com/documentation/corespotlight)是官网对Core Spotlight的说明。
 
 我们做一个简单示例，当在Spotlight中搜索`One or two or three`的时候启用我们的App, 并使用User activity做一些事情。
