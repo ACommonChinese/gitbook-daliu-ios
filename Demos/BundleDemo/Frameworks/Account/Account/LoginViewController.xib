@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Account" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="4u9-zo-dai" id="6jS-hj-190"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQj-5o-14h">
+                    <rect key="frame" x="15" y="91" width="384" height="47"/>
+                    <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="pgu-rZ-v4s"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="普通图片">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="getImage:" destination="-1" eventType="touchUpInside" id="qAF-cf-41L"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfo-Kr-Uyy">
+                    <rect key="frame" x="15" y="146" width="384" height="47"/>
+                    <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="HWn-PW-Pl4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="在文夹件中图片">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="getImageInDir:" destination="-1" eventType="touchUpInside" id="DhZ-dn-v96"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHK-Cy-tRF">
+                    <rect key="frame" x="15" y="201" width="384" height="47"/>
+                    <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="RVh-vL-Ou4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="在Bundle中图片">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="getImageInBundle:" destination="-1" eventType="touchUpInside" id="dxE-lH-Hvy"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4u9-zo-dai">
+                    <rect key="frame" x="15" y="654" width="384" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="9Z8-pC-YDs"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4R-i6-fXc">
+                    <rect key="frame" x="15" y="256" width="384" height="47"/>
+                    <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="CwL-Qx-Zsd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="在.xcassets中图片">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="getImageInXcassets:" destination="-1" eventType="touchUpInside" id="fBR-gr-cs9"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XHK-Cy-tRF" secondAttribute="trailing" constant="15" id="4d1-TA-lcd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XQj-5o-14h" secondAttribute="trailing" constant="15" id="5vS-z0-Vs5"/>
+                <constraint firstItem="vfo-Kr-Uyy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="BPQ-0k-NoP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="g4R-i6-fXc" secondAttribute="trailing" constant="15" id="FUw-lV-lem"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4u9-zo-dai" secondAttribute="trailing" constant="15" id="G38-NW-ndP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vfo-Kr-Uyy" secondAttribute="trailing" constant="15" id="HQY-Qn-Eyv"/>
+                <constraint firstItem="g4R-i6-fXc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="Nq2-I4-Gtk"/>
+                <constraint firstItem="vfo-Kr-Uyy" firstAttribute="top" secondItem="XQj-5o-14h" secondAttribute="bottom" constant="8" id="PfX-kD-nsY"/>
+                <constraint firstItem="4u9-zo-dai" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="SkG-Gw-OpA"/>
+                <constraint firstItem="XHK-Cy-tRF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="XKO-W9-j6Z"/>
+                <constraint firstItem="XQj-5o-14h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="Z3D-3I-DSR"/>
+                <constraint firstItem="XQj-5o-14h" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="47" id="c8V-NP-nq5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4u9-zo-dai" secondAttribute="bottom" constant="8" id="g2z-nY-zKa"/>
+                <constraint firstItem="XHK-Cy-tRF" firstAttribute="top" secondItem="vfo-Kr-Uyy" secondAttribute="bottom" constant="8" id="m0m-2z-sBx"/>
+                <constraint firstItem="g4R-i6-fXc" firstAttribute="top" secondItem="XHK-Cy-tRF" secondAttribute="bottom" constant="8" id="v1l-yv-Hhq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="147.82608695652175" y="49.553571428571423"/>
+        </view>
+    </objects>
+</document>

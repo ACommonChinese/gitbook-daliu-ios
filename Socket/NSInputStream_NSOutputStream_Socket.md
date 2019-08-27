@@ -301,6 +301,7 @@ static int32_t const kStreamBufferSize = 2048;
         }
         case NSStreamEventEndEncountered: {
             NSLog(@"连接结束");
+            [self clear];
             break;
         }
         default:

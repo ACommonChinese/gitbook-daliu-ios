@@ -6,7 +6,6 @@
 
 也可以直接Pull request [github](https://github.com/ACommonChinese/gitbook-daliu-ios)
 
-![](images/free_0.jpg)
 ![](images/free_1.jpg)
 ![](images/free_2.jpg)
 

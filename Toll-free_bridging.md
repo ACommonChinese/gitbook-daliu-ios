@@ -1,5 +1,7 @@
 # Toll-free bridging
 
+[Apple](https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Toll-FreeBridgin/Toll-FreeBridgin.html#//apple_ref/doc/uid/TP40010810-CH2)
+
 ARC环境下，编译器不会自动管理CoreFoundation对象的内存，需要手动管理, Toll-free bridging 是ARC下OC对象和Core Foundation对象之间的桥梁
 可以通过`__bridge, __bridge_transfer, __bridge_retained`来进行内存管理.
 `__bridge`一般用在只涉及对象类型不涉及对象所有权的转化
