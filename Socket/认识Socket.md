@@ -14,12 +14,18 @@ Socket套接字有多种形式，但一般是指Internet套接字，根据数据
 [http://c.biancheng.net/view/2124.html](http://c.biancheng.net/view/2124.html)
 
 **流格式套接字（SOCK\_STREAM）**  
-流格式套接字（Stream Sockets）也叫“面向连接的套接字”, 使用TCP 协议，在代码中使用 SOCK\_STREAM 表示，SOCK\_STREAM 是一种可靠的、双向的通信数据流，数据可以准确无误地到达另一台计算机，如果损坏或丢失，可以重新发送。  
+流格式套接字（Stream Sockets）也叫“面向连接的套接字”, 使用TCP 协议，在代码中使用 SOCK\_STREAM 表示，SOCK\_STREAM 是一种可靠的、双向的通信数据流，数据可以准确无误地到达另一台计算机，如果损坏或丢失，可以重新发送。 什么是面向连接和面向非连接？[参见这里](http://c.biancheng.net/view/2125.html)
 SOCK\_STREAM 有以下几个特征：
 
 * 数据在传输过程中不会消失；
 * 数据是按照顺序传输的；
 * 数据的发送和接收不是同步的（有的教程也称“不存在数据边界”）
+
+`SOCK_STREAM`是基于流的传输，可以想像成传送带，因此数据是按顺序传输的。
+怎么理解“数据的发送和接收是不同步的”？流格式套接字的内部有一个缓冲区（也就是字符数组），通过 socket 传输的数据将保存到这个缓冲区。接收端在收到数据后并不一定立即读取，只要数据不超过缓冲区的容量，接收端有可能在缓冲区被填满以后一次性地读取，也可能分成好几次读取。
+也就是说，不管数据分几次传送过来，接收端只需要根据自己的要求读取，不用非得在数据到达时立即读取。传送端有自己的节奏，接收端也有自己的节奏，它们是不一致的。
+
+浏览器所使用的 http 协议就基于面向连接的套接字，即流套接字，因为必须要确保数据准确无误，否则加载的 HTML 将无法解析。
 
 **数据报格式套接字（SOCK\_DGRAM）**  
 数据报格式套接字（Datagram Sockets）也叫“无连接的套接字”，使用UDP协议，在代码中使用 SOCK\_DGRAM 表示。  
@@ -32,7 +38,9 @@ SOCK\_STREAM 有以下几个特征：
 * 限制每次传输的数据大小；
 * 数据的发送和接收是同步的（有的教程也称“存在数据边界”）。
 
-除了源端口和目的端口，面向连接的套接字还包括序号、确认信号、数据偏移、控制标志（通常说的 URG、ACK、PSH、RST、SYN、FIN）、窗口、校验和、紧急指针、选项等信息；而无连接的套接字则只包含长度和校验和信息
+除了源端口和目的端口，面向连接的套接字还包括序号、确认信号、数据偏移、控制标志（通常说的 URG、ACK、PSH、RST、SYN、FIN）、窗口、校验和、紧急指针、选项等信息；而无连接的套接字则只包含长度和校验和信息。数据报套接字也使用 IP 协议作路由，但是它不使用 TCP 协议，而是使用 UDP 协议（User Datagram Protocol，用户数据报协议）。
+
+怎么理解“数据的发送和接收是同步的”？打个比方，用两辆摩托车分别发送两件包裹，那么接收者也需要分两次接收，所以“数据的发送和接收是同步的”；换句话说，接收次数应该和发送次数相同。
 
 ![](./images/wifi.png)
 
@@ -131,6 +139,7 @@ int main(int argc, const char * argv[]) {
     // 接收客户端请求
     struct sockaddr_in clnt_addr;
     socklen_t clnt_addr_size = sizeof(clnt_addr);
+    // accept会阻塞当前线程，accept for connection of client
     int clnt_sock = accept(serv_sock, (struct sockaddr *)&clnt_addr, &clnt_addr_size);
     // The call returns -1 on error and the global variable errno is set to
     // indicate the error.  If it succeeds, it returns a non-negative integer
