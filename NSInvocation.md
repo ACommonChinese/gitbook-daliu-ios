@@ -223,7 +223,186 @@ int main(int argc, const char * argv[]) {
 
 Person实现了go方法，因此调用`[p go]`的时候，直接调到了Person的方法，没有走到`methodSignatureForSelector:`和`forwardInvocation:`，但是由于没有实现work方法，当调用`[p work]`时，会先走到`methodSignatureForSelector:`, 然后系统生成NSInvocation对象传给`forwardInvocation:`，我们在此方法中把消息转给了computer对象，就走到了computer对象的work方法。
 
+### 示例2
 
+接下来手动创建NSInvocation， 看一下调用过程，分为实例方法调用和类方法调用：
+
+```Objective-C
+@interface Person : NSObject
+
+- (void)testInvocation;
++ (Person *)testInvocation;
+
+@end
+```
+
+```Objective-C
+#import "Person.h"
+
+
+@interface Person ()
+
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, assign) NSInteger age;
+@property (nonatomic, copy) NSString *color;
+
+@end
+
+@implementation Person
+
+- (NSString *)setName:(NSString *)name age:(NSInteger)age color:(NSString *)color {
+    NSLog(@"name: %@ == age: %d == color: %@", name, (int)age, color);
+    return @"Hello NSInvocation";
+}
+
++ (Person *)personWithName:(NSString *)name age:(NSInteger)age color:(NSString *)color {
+    Person *p = [[Person alloc] init];
+    p.name = name;
+    p.age = age;
+    p.color = color;
+    return p;
+}
+
++ (Person *)testInvocation {
+    NSMethodSignature *sig = [[self class] methodSignatureForSelector:@selector(personWithName:age:color:)];
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:sig];
+    invocation.target = [self class]; // 类方法
+    invocation.selector = @selector(personWithName:age:color:);
+    NSString *name = @"大刘";
+    NSInteger age = 30;
+    NSString *color = @"yellow";
+    [invocation setArgument:&name atIndex:2];
+    [invocation setArgument:&age atIndex:3];
+    [invocation setArgument:&color atIndex:4];
+    [invocation invoke];
+    // 在arc模式下，getReturnValue：仅仅是从invocation的返回值拷贝到指定的内存地址
+    // 如果返回值是一个NSObject对象的话，是没有处理起内存管理的
+    // 在定义Person *p时，默认使用__strong类型的指针，arc就会假设该内存块已被retain, 但实际上没有
+    // 当p出了定义域释放时，可能导致crash
+    // 假如在定义之前有赋值的话，还会造成内存泄露的问题
+    // 可以使用__unsafe_unretained声明解决此问题，也可以使用void *指针保存返回值，然后用__bridge转化OC对象
+    
+    Person *__unsafe_unretained p;
+    [invocation getReturnValue:&p];
+    
+    /** 这样也是可以的
+    void *person;
+    [invocation getReturnValue:&person];
+    Person *p = (__bridge Person *)(person);
+     */
+    
+    NSLog(@"name: %@ == age: %d == color: %@", p.name, (int)p.age, p.color);
+    
+    return p;
+}
+
+- (void)testInvocation {
+    
+    // 1. 获取方法签名；此方法是NSObject 的方法
+    NSMethodSignature *sig = [[self class] instanceMethodSignatureForSelector:@selector(setName:age:color:)];
+    // 2.通过方法签名生成NSInvocation
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:sig];
+    // 3. 设置target, selector
+    invocation.target = self;
+    invocation.selector = @selector(setName:age:color:);
+    // 4. 设置参数, 0和1是self和_cmd, 从2开始
+    NSString *name = @"大刘";
+    NSInteger age = 30;
+    NSString *color = @"yellow";
+    [invocation setArgument:&name atIndex:2]; // argument是const void *
+    [invocation setArgument:&age atIndex:3];
+    [invocation setArgument:&color atIndex:4];
+    // 5. invoke
+    [invocation invoke];
+    // [invocation invokeWithTarget:(nonnull id)]
+    // 6. 处理返回值
+    // From Apple: methodReturnType: C string encoding the return type of the method in Objective-C type encoding. 方法签名的methodReturnType是Type Encoding后的值
+    // 类型编码参见Apple: https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100
+    const char *returnType = sig.methodReturnType; // 对象返回@, 如果是void, 返回v
+    NSUInteger returnLength = sig.methodReturnLength; // 占8字节，如果是void, 此处为0
+    if (returnLength <= 0) {
+        NSLog(@"没有返回值");
+    }
+    else {
+        NSString *returnValue;
+        [invocation getReturnValue:&returnValue];
+        NSLog(@"返回值： %@", returnValue); // Hello NSInvocation
+        
+        /** #import <objc/runtime.h>
+        // int type
+        if (strcmp(returnType, @encode(char)) == 0) {
+        }
+        else if (strcmp(returnType, @encode(short)) == 0) {
+        }
+        else if (strcmp(returnType, @encode(int)) == 0) {
+        }
+         else if (strcmp(returnType, @encode(unsigned int)) == 0) {
+         }
+         // NSInteger type
+         else if (strcmp(returnType, @encode(NSInteger)) == 0) {
+         }
+        else if (strcmp(returnType, @encode(bool)) == 0) {
+        }
+        else if (strcmp(returnType, @encode(BOOL)) == 0) {
+        }
+        // unsigned int type
+        else if (strcmp(returnType, @encode(unsigned char)) == 0) {
+        }
+        else if (strcmp(returnType, @encode(unsigned short)) == 0) {
+        }
+         else if (strcmp(returnType, @encode(double)) == 0) {
+         }
+         // char * type
+         else if (strcmp(returnType, @encode(char *)) == 0) {
+         }
+         // Class type
+         else if (strcmp(returnType, @encode(Class)) == 0) {
+         }
+        // NSUInteger type
+        else if (strcmp(returnType, @encode(NSUInteger)) == 0) {
+        }
+        // long type
+        else if (strcmp(returnType, @encode(long)) == 0) {
+        }
+        // unsigined long type
+        else if (strcmp(returnType, @encode(unsigned long)) == 0) {
+        }
+        else if (strcmp(returnType, @encode(long long)) == 0) {
+        }
+        // unsigned long long type
+        else if (strcmp(returnType, @encode(unsigned long long)) == 0) {
+        }
+        // double type
+        else if (strcmp(returnType, @encode(float)) == 0) {
+        }
+        
+        // SEL type
+        else if (strcmp(type, @encode(SEL)) == 0) {
+        }
+        // Block type
+        else if (strcmp(type, @encode(void(^)(void))) == 0) {
+        }
+         */
+    }
+}
+
+@end
+```
+
+```Objectie-C
+#import <Foundation/Foundation.h>
+#import "Person.h"
+
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        Person *p = [[Person alloc] init];
+        [p testInvocation];
+        Person *p = [Person testInvocation];
+        NSLog(@"%@", p);
+    }
+    return 0;
+}
+```
 
 
 
