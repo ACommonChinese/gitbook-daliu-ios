@@ -251,5 +251,42 @@ func click() {
 
 ### 示例：
 
+[代码示例JSONDecoderDemo](https://github.com/ACommonChinese/gitbook-daliu-ios/tree/master/%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/JSONDecoderDemo)
+
+通过一个复杂一些的示例展示，写一个从本地加载JSON数据为生成模型对象的类
+
+```swift
+class JSONLoader {
+    public static func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
+        let data: Data
+        
+        guard let file = Bundle.main.url(forResource: filename, withExtension: nil) else {
+            fatalError("Couldn't find \(filename) in main bundle.")
+        }
+        
+        do {
+            data = try Data(contentsOf: file)
+        } catch {
+            fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
+        }
+        
+        do {
+            let decoder = JSONDecoder()
+            return try decoder.decode(T.self, from: data)
+        } catch {
+            fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+        }
+    }
+}
+```
+
+调用如下：
+
+```swift
+let landmarks: [Landmark] = JSONLoader.load("landmarkData.json")
+for landmark in landmarks {
+    print(landmark.coordinates.latitude)
+}
+```
 
 
