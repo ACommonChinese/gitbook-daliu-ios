@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     }
     
     // typealias Codable = Decodable & Encodable
+    // 需要被反序列化的对象需要实现Decodable接口
     struct Product: Codable {
         var name: String
         var points: Int
