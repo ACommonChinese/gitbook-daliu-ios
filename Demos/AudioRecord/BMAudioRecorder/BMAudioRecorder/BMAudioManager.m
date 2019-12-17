@@ -84,7 +84,12 @@
 }
 
 - (AVAudioPlayer *)getPlayer {
+    
     if (!_player) {
+        // A Boolean value that specifies whether playback rate adjustment is enabled for an audio player.
+        // To enable adjustable playback rate for an audio player, set this property to YES after you initialize the player and before you call the prepareToPlay instance method for the player.
+        // _player.enableRate
+        
         NSError *error = nil;
         _player = [[AVAudioPlayer alloc] initWithContentsOfURL:[self getRecordUrl] error:&error];
         if (!_player || error) {

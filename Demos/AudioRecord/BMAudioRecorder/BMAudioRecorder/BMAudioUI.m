@@ -15,7 +15,6 @@
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
     BMAudioRecordViewController *controller = [[BMAudioRecordViewController alloc] initWithNibName:@"BMAudioRecordViewController" bundle:bundle];
     [parentController pushViewController:controller animated:YES];
-    // [parentController presentViewController:controller animated:YES completion:nil];
 }
 
 @end

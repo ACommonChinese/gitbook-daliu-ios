@@ -22,7 +22,7 @@
 - (instancetype)initWithFilePath:(NSString *)filePath {
     if (self = [super init]) {
         self.SAMPLE_RATE = 44100;
-        self.CHANNEL_COUNT = 1; // 2时说话很快
+        self.CHANNEL_COUNT = 1;
         self.srcFilePath = filePath;
     }
     

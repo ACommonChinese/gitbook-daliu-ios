@@ -16,6 +16,7 @@
 		AB11E9BB233B4D0F00DD09F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB11E9BA233B4D0F00DD09F3 /* main.m */; };
 		AB11EA18233C558C00DD09F3 /* BMAudioRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB11EA04233B51A200DD09F3 /* BMAudioRecorder.framework */; };
 		AB11EA19233C558C00DD09F3 /* BMAudioRecorder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB11EA04233B51A200DD09F3 /* BMAudioRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ABF6014B23A368B5006DFA7B /* wen_qing.wav in Resources */ = {isa = PBXBuildFile; fileRef = ABF6014923A368B5006DFA7B /* wen_qing.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		AB11E9B9233B4D0F00DD09F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB11E9BA233B4D0F00DD09F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB11E9FF233B51A200DD09F3 /* BMAudioRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BMAudioRecorder.xcodeproj; path = BMAudioRecorder/BMAudioRecorder.xcodeproj; sourceTree = SOURCE_ROOT; };
+		ABF6014923A368B5006DFA7B /* wen_qing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wen_qing.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				AB11E9AE233B4D0E00DD09F3 /* ViewController.h */,
 				AB11E9AF233B4D0E00DD09F3 /* ViewController.m */,
 				AB11E9B1233B4D0E00DD09F3 /* Main.storyboard */,
+				ABF6014923A368B5006DFA7B /* wen_qing.wav */,
 				AB11E9B4233B4D0F00DD09F3 /* Assets.xcassets */,
 				AB11E9B6233B4D0F00DD09F3 /* LaunchScreen.storyboard */,
 				AB11E9B9233B4D0F00DD09F3 /* Info.plist */,
@@ -195,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF6014B23A368B5006DFA7B /* wen_qing.wav in Resources */,
 				AB11E9B8233B4D0F00DD09F3 /* LaunchScreen.storyboard in Resources */,
 				AB11E9B5233B4D0F00DD09F3 /* Assets.xcassets in Resources */,
 				AB11E9B3233B4D0E00DD09F3 /* Main.storyboard in Resources */,

@@ -18,6 +18,8 @@
 		AB11EA15233B855200DD09F3 /* recorderImages.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB11EA14233B855200DD09F3 /* recorderImages.bundle */; };
 		ABB5864A2394EB4D0067BFB2 /* BMWavEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB586482394EB4D0067BFB2 /* BMWavEncoder.h */; };
 		ABB5864B2394EB4D0067BFB2 /* BMWavEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB586492394EB4D0067BFB2 /* BMWavEncoder.m */; };
+		ABF6014723A3673E006DFA7B /* BMWavHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = ABF6014523A3673D006DFA7B /* BMWavHeader.h */; };
+		ABF6014823A3673E006DFA7B /* BMWavHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF6014623A3673D006DFA7B /* BMWavHeader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		AB11EA14233B855200DD09F3 /* recorderImages.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = recorderImages.bundle; sourceTree = "<group>"; };
 		ABB586482394EB4D0067BFB2 /* BMWavEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMWavEncoder.h; sourceTree = "<group>"; };
 		ABB586492394EB4D0067BFB2 /* BMWavEncoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMWavEncoder.m; sourceTree = "<group>"; };
+		ABF6014523A3673D006DFA7B /* BMWavHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMWavHeader.h; sourceTree = "<group>"; };
+		ABF6014623A3673D006DFA7B /* BMWavHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMWavHeader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 				AB11EA0A233B6F2F00DD09F3 /* BMAudioRecordViewController.m */,
 				AB11EA0B233B6F2F00DD09F3 /* BMAudioRecordViewController.xib */,
 				AB11E9F8233B518000DD09F3 /* Info.plist */,
+				ABF6014523A3673D006DFA7B /* BMWavHeader.h */,
+				ABF6014623A3673D006DFA7B /* BMWavHeader.m */,
 				ABB586482394EB4D0067BFB2 /* BMWavEncoder.h */,
 				ABB586492394EB4D0067BFB2 /* BMWavEncoder.m */,
 			);
@@ -90,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABB5864A2394EB4D0067BFB2 /* BMWavEncoder.h in Headers */,
+				ABF6014723A3673E006DFA7B /* BMWavHeader.h in Headers */,
 				AB11EA11233B6FD900DD09F3 /* BMAudioUI.h in Headers */,
 				AB11EA07233B6D7800DD09F3 /* BMAudioManager.h in Headers */,
 				AB11E9F9233B518000DD09F3 /* BMAudioRecorder.h in Headers */,
@@ -168,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB11EA08233B6D7800DD09F3 /* BMAudioManager.m in Sources */,
+				ABF6014823A3673E006DFA7B /* BMWavHeader.m in Sources */,
 				ABB5864B2394EB4D0067BFB2 /* BMWavEncoder.m in Sources */,
 				AB11EA12233B6FD900DD09F3 /* BMAudioUI.m in Sources */,
 				AB11EA0D233B6F2F00DD09F3 /* BMAudioRecordViewController.m in Sources */,
