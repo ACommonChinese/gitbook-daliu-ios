@@ -44,8 +44,15 @@
     int totalSize = (int)[attributes fileSize];
     BMWavHeader *header = [[BMWavHeader alloc] init];
     header.fileLength = totalSize + (44 - 8); // totalDataLength
-
-    NSData *headerData = WriteWavFileHeader(totalSize, totalSize + (44 - 8), _SAMPLE_RATE, _CHANNEL_COUNT, header.blockAlign * header.samplesPerSec);
+    header.fmtHeaderLength = 16;
+    header.channels = _CHANNEL_COUNT;
+    header.formatTag = 0x0001;
+    header.samplesPerSec = _SAMPLE_RATE;
+    header.blockAlign = header.channels * header.bitsPerSample / 8;
+    header.avgBytesPerSec = header.blockAlign * header.samplesPerSec;
+    header.dataHeaderLength = totalSize;
+    NSData *headerData = [header getData];
+    // WriteWavFileHeader(totalSize, totalSize + (44 - 8), _SAMPLE_RATE, _CHANNEL_COUNT, header.blockAlign * header.samplesPerSec);
     if (headerData.length != 44) {
         return;
     }
@@ -62,6 +69,7 @@
     NSLog(@"dest: %@", destPath);
 }
 
+// https://stackoverflow.com/questions/10914888/recording-wav-format-file-with-avaudiorecorder
 NSData* WriteWavFileHeader(long totalAudioLen, long totalDataLen, long longSampleRate,int channels, long byteRate)
 {
     Byte header[44];
