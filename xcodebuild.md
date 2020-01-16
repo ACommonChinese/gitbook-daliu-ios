@@ -1,77 +1,8 @@
 # xcodebuild
 
-参考：
-- [https://developer.apple.com/library/archive/technotes/tn2339/_index.html](https://developer.apple.com/library/archive/technotes/tn2339/_index.html)
-- [https://www.jianshu.com/p/a65d8d1b090b](https://www.jianshu.com/p/a65d8d1b090b)
-- [https://testerhome.com/topics/10375](https://testerhome.com/topics/10375)
-
-在此之前，需先说明Xcode Target、Project、Build Settings 、Workspace、Scheme这些概念：
-[这里](https://developer.apple.com/library/archive/featuredarticles/XcodeConcepts/Concept-Projects.html#//apple_ref/doc/uid/TP40009328-CH5-SW1)是Apple官网说明
-
-**Target**
-
-Target主要用来告诉工程如何编译生成产品，比如同一个工程Project可以生成多个Target: iOS/Watch/等等，一个Target定义一个Product, 一个Project可以有多个Target。而且Target是继承自Project的，也就是说如果你在Project中配置了某个东西，那么所有的Target都会生效；但是反之则不会生效。一个target 可以依赖其他target,  比如iOS的应用是一个Target，这个Target可以依赖(dependencies)其他framework, TARGETS > Build Phases > Target Dependencies
-A target specifies a product to build and contains the instructions for building the product from a set of files in a project or workspace. A target defines a single product; it organizes the inputs into the build system—the source files and instructions for processing those source files—required to build that product. Projects can contain one or more targets, each of which produces one product.
-
-**Project**
-
-Project即工程本身，它其实是一个包含了所有文件、资源和构建信息的一个存储库， 一个Project包含了所有用于编译项目(product)的元素及元素之间的关系。它可以包含多个Target(所谓Target， 实质上是用于指定如何编译产品),  默认情况下,一个Project定义的build settings对于所有的Target都是一样的.
-
-**Scheme**
-
-An Xcode scheme defines a collection of targets to build, a configuration to use when building, and a collection of tests to execute.
-You use Xcode schemes to specify which target, build configuration, and executable configuration is active at a given time.
-
-**Build Settings**
-
-A build setting is a variable that contains information about how a particular aspect of a product’s build process should be performed. For example, the information in a build setting can specify which options Xcode passes to the compiler.
-
-You can specify build settings at the project or target level. Each project-level build setting applies to all targets in the project unless explicitly overridden by the build settings for a specific target.
-
-Each target organizes the source files needed to build one product. A build configuration specifies a set of build settings used to build a target's product in a particular way.
-每一个Target都会编译成一个产品Product,  编译选项Build Configuration通过指定一组build settings告诉Target如何编译生成产品Product
-
-**实战**
-
-需求：服务器环境分为开发环境(Debug)、QA环境、线上环境(Release)，为了方便环境测试，可以通过Configuration配置不同的选项，从而不用每次切换环境手动修改代码。
-
-做法：
-
-**1. 复制Configuration**
-
-如下图点击"+"复制一个Configuration，并命名为QA
-![](./images/xcodebuild_1.png)
-这样之后，我们就可以看到schema里多一个QA选项(默认有Debug和Release)
-![](./images/xcodebuild_2.png)
-
-**2. 添加预定义宏**
-
-比如我们在Debug下添加`__DEBUG__`
-在QA下添加`__QA__`
-在Release下添加`__RELEASE`
-
-**3. 在代码中判断处理**
-
-```Objective-C
-- (NSString *)getHost {
-#ifdef __DEBUG__
-    return @"debug host";
-#elif __QA__
-    return @"qa host";
-#elif __RELEASE__
-    return @"release host";
-#endif
-    return nil;
-}
-```
-
-我们甚至可以针对不同的环境设置不同的Info.plist, 针对不同的环境设置不同的打包证书
-![](./images/xcodebuild_4.png)
-
 ### xcode build
 
-xcodebuild是一个命令行工具:
-xcodebuild is a command-line tool that allows you to perform build, query, analyze, test, and archive operations on your Xcode projects and workspaces from the command line.
+
 
 ```shell
 which a xcodebuild # /usr/bin/xcodebuild
