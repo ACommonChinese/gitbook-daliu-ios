@@ -43,6 +43,7 @@
     * [基本概念](xcodebuild/基本概念.md)
     * [TextMacros](xcodebuild/TextMacros.md)
     * [常用命令](xcodebuild/常用命令.md)
+    * [打包framework](xcodebuild/打包framework.md)
 * [脚本使用](脚本使用/脚本使用.md)
 * [Swift](Swift/README.md)
     * [入门语法](Swift/入门语法.md)

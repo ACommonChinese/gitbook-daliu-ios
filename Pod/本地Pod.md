@@ -51,7 +51,7 @@ Pod::Spec.new do |spec|
   spec.name         = "AnimalKit" # 注意，这个name就是被用来在Podfile中引用的名字：pod 'AnimalKit', :path => '/Users/.../AnimalKit'
   spec.platform     = :ios, '9.0'
   spec.version      = "1.0.0"
-  spec.homepage 	= "/Users/banma-623/Desktop/ForDelete/LocalFilePodDemo/LocalPods/AnimalKit"
+  spec.homepage 	= "/Users/liuweizhen/Desktop/ForDelete/LocalFilePodDemo/LocalPods/AnimalKit"
   spec.summary      = "nimalKit summary: Animal behaviors encapsulate"
   spec.license      = "MIT"
   spec.author       = { "刘威振" => "liuxing8807@126.com" }

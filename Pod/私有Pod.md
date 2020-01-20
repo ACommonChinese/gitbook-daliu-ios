@@ -34,7 +34,7 @@ $ pod repo
 master
 - Type: git (master)
 - URL:  https://github.com/CocoaPods/Specs.git
-- Path: /Users/banma-623/.cocoapods/repos/master
+- Path: /Users/liuweizhen/.cocoapods/repos/master
 
 MyPrivateRepo
 - Type: git (master)
