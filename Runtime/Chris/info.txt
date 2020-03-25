@@ -1,0 +1,77 @@
+CMAKE
+
+clang -S xxx.cpp 生成汇编 
+
+g++ xxx.s 编译成.out可执行 
+
++ symbolic断点 __objc_init__
+
+查看.app用到的库：
+otool -L xxx.app/ObjcRuntime 
+
+libobjc.A.dylib: 这就是runtime的库 
+
+
+
+Enable Strict Checking of objc_msgSend Calls
+
+struct {
+	int a, 
+	char b,
+	char c
+}
+
+struct {
+	char b,
+	int a, 
+	char c
+}
+
+sizeof
+
+
+struct objc_object c;
+
+
+Category不是继承于objc
+
+category中不可以加成员变量：
+const ivar_list_t *ivars  
+
+
+clang -x objective-c -isysroot /Application/Xcode.app/Contents/Developer/Platforms/iPhoneSim/Develop/Sdks/iphoneSimu -rewrite
+
+实例方法由isa维护
+类方法由MetaClass维护  
+
+ojbc_allocateClassPair 创建了两个class
+
+
+struct内嵌套union 
+
+先调category, 因为会把category中的方法加到对象中  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

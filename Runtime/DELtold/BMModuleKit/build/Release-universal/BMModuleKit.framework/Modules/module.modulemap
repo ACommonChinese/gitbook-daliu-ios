@@ -1,0 +1,6 @@
+framework module BMModuleKit {
+  umbrella header "BMModuleKit.h"
+
+  export *
+  module * { export * }
+}

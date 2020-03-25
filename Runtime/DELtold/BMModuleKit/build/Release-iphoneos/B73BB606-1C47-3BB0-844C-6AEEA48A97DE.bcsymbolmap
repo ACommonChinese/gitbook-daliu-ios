@@ -1,0 +1,62 @@
+BCSymbolMap Version: 2.0
++[BMModuleRouter sharedRouter]
+___30+[BMModuleRouter sharedRouter]_block_invoke
+___copy_helper_block_e8_
+___destroy_helper_block_e8_
+-[BMModuleRouter init]
+-[BMModuleRouter addModule:]
+-[BMModuleRouter removeModule:]
+-[BMModuleRouter addRouters:type:]
+-[BMModuleRouter addRouter:invocation:]
+-[BMModuleRouter route:]
+-[BMModuleRouter routerInvocation:]
+-[BMModuleRouter target:]
+-[BMModuleRouter routers]
+-[BMModuleRouter setRouters:]
+-[BMModuleRouter modules]
+-[BMModuleRouter setModules:]
+-[BMModuleRouter .cxx_destruct]
+-[BMModuleRouterInvocation init]
+-[BMModuleRouterInvocation invoke:]
+-[BMModuleRouterInvocation prepareArguments:args:]
+-[BMModuleRouterInvocation invocationReturnValue:]
+-[BMModuleRouterInvocation dealloc]
+-[BMModuleRouterInvocation module]
+-[BMModuleRouterInvocation setModule:]
+-[BMModuleRouterInvocation method]
+-[BMModuleRouterInvocation setMethod:]
+-[BMModuleRouterInvocation invocationType]
+-[BMModuleRouterInvocation setInvocationType:]
+-[BMModuleRouterInvocation argumentCount]
+-[BMModuleRouterInvocation setArgumentCount:]
+-[BMModuleRouterInvocation argumentTypes]
+-[BMModuleRouterInvocation setArgumentTypes:]
+-[BMModuleRouterModule initWithClass:args:]
+-[BMModuleRouterModule target]
+-[BMModuleRouterModule targetClass]
+-[BMModuleRouterModule setTargetClass:]
+-[BMModuleRouterModule setTarget:]
+-[BMModuleRouterModule shouldCache]
+-[BMModuleRouterModule setShouldCache:]
+-[BMModuleRouterModule .cxx_destruct]
+_sharedRouter.onceToken
+_sharedRouter.sharedInstance
+___block_descriptor_40_e8__e5_v8@?0l
+_OBJC_IVAR_$_BMModuleRouter._routers
+_OBJC_IVAR_$_BMModuleRouter._modules
+_OBJC_IVAR_$_BMModuleRouterInvocation._argumentTypes
+_OBJC_IVAR_$_BMModuleRouterInvocation._module
+_OBJC_IVAR_$_BMModuleRouterInvocation._method
+_OBJC_IVAR_$_BMModuleRouterInvocation._invocationType
+_OBJC_IVAR_$_BMModuleRouterInvocation._argumentCount
+_OBJC_IVAR_$_BMModuleRouterModule._targetClass
+_OBJC_IVAR_$_BMModuleRouterModule._shouldCache
+_OBJC_IVAR_$_BMModuleRouterModule._target
+Apple LLVM version 10.0.1 (clang-1001.0.46.4)
+/Users/banma-1118/Documents/Job/Gerrit/MP:teleri:sdk:ios/ios/BMModuleKit/BMModuleKit/BMModuleRouter.m
+/Users/banma-1118/Documents/Job/Gerrit/MP:teleri:sdk:ios/ios/BMModuleKit
+__destroy_helper_block_e8_
+__copy_helper_block_e8_
+__30+[BMModuleRouter sharedRouter]_block_invoke
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/usr/include/dispatch/once.h
+/Users/banma-1118/Documents/Job/Gerrit/MP:teleri:sdk:ios/ios/BMModuleKit/build/BMModuleKit.build/Release-iphoneos/BMModuleKit.build/DerivedSources/BMModuleKit_vers.c
