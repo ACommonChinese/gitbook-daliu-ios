@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?3vdj48');
+  src:  url('fonts/icomoon.eot?3vdj48#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?3vdj48') format('truetype'),
+    url('fonts/icomoon.woff?3vdj48') format('woff'),
+    url('fonts/icomoon.svg?3vdj48#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icomoon-"], [class*=" icomoon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icomoon-detail-design:before {
+  content: "\e90e";
+}
+.icomoon-code:before {
+  content: "\e90c";
+}
+.icomoon-play:before {
+  content: "\e909";
+}
+.icomoon-back:before {
+  content: "\e90a";
+}
+.icomoon-home:before {
+  content: "\e90b";
+}
+.icomoon-detail-proto:before {
+  content: "\e90d";
+}
+.icomoon-detail-share:before {
+  content: "\e901";
+}
+.icomoon-detail-eye:before {
+  content: "\e900";
+}
+.icomoon-detail-mark:before {
+  content: "\e902";
+}
+.icomoon-detail-switch:before {
+  content: "\e903";
+}
+.icomoon-detail-knife:before {
+  content: "\e904";
+}
+.icomoon-detail-markadd:before {
+  content: "\e906";
+}
+.icomoon-detail-colorize:before {
+  content: "\e907";
+}
+.icomoon-detail-closeeye:before {
+  content: "\e908";
+}

@@ -194,7 +194,6 @@ OBJC_EXPORT void _objc_unload_image(HMODULE image, header_info *hinfo)
 // TARGET_OS_WIN32
 #elif TARGET_OS_MAC
 
-#include "objc-file-old.h"
 #include "objc-file.h"
 
 

@@ -1326,13 +1326,18 @@ struct swift_class_t : objc_class {
 struct category_t {
     const char *name;
     classref_t cls;
+    // 实例方法列表
     struct method_list_t *instanceMethods;
+    // 类方法列表
     struct method_list_t *classMethods;
+    // 协议列表
     struct protocol_list_t *protocols;
     struct property_list_t *instanceProperties;
     // Fields below this point are not always present on disk.
     struct property_list_t *_classProperties;
 
+    // 如果是MetaClass, 返回类方法
+    // 否则返回实例方法
     method_list_t *methodsForMeta(bool isMeta) {
         if (isMeta) return classMethods;
         else return instanceMethods;

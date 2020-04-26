@@ -332,6 +332,7 @@ _objc_getTaggedPointerSignedValue(const void * _Nullable ptr);
 static inline bool 
 _objc_taggedPointersEnabled(void)
 {
+    // objc_debug_taggedpointer_mask的值是1U
     extern uintptr_t objc_debug_taggedpointer_mask;
     return (objc_debug_taggedpointer_mask != 0);
 }

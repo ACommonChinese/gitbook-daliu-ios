@@ -28,7 +28,7 @@ int main(int argc, const char * argv[]) {
         // 以下3种方法都可
         objc_msgSend(object_getClass(s), sel_registerName("run"));
         objc_msgSend(NSClassFromString(@"Student"), sel_registerName("run"));
-        objc_msgSend(object_getClass([Student class]), @selector(run));
+        //objc_msgSend(object_getClass([Student class]), @selector(run));
     }
     return 0;
 }

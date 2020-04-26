@@ -1,5 +1,7 @@
 CMAKE
 
+
+
 clang -S xxx.cpp 生成汇编 
 
 g++ xxx.s 编译成.out可执行 
@@ -30,6 +32,9 @@ struct {
 sizeof
 
 
+
+
+
 struct objc_object c;
 
 
@@ -38,8 +43,7 @@ Category不是继承于objc
 category中不可以加成员变量：
 const ivar_list_t *ivars  
 
-
-clang -x objective-c -isysroot /Application/Xcode.app/Contents/Developer/Platforms/iPhoneSim/Develop/Sdks/iphoneSimu -rewrite
+clang -x objective-c -isysroot /Application/Xcode.app/Contents/Developer/Platforms/iPhoneSim/Develop/Sdks/iphoneSimu --rewrite main.m
 
 实例方法由isa维护
 类方法由MetaClass维护  

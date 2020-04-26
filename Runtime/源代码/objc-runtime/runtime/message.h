@@ -70,7 +70,7 @@ objc_msgSendSuper(void /* struct objc_super *super, SEL op, ... */ )
  * 
  * @param self A pointer to the instance of the class that is to receive the message.
  * @param op The selector of the method that handles the message.
- * @param ... 
+ * @param ... ]
  *   A variable argument list containing the arguments to the method.
  * 
  * @return The return value of the method.

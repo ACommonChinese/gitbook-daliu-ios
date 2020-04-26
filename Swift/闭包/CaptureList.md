@@ -5,7 +5,32 @@
 [HACKING WITH SWIFT](https://www.hackingwithswift.com/articles/179/capture-lists-in-swift-whats-the-difference-between-weak-strong-and-unowned-references)  
 [简书译文](https://www.jianshu.com/p/37a62bada107)   
 
-CaptureList即捕获列表，位于代码中的闭包参数列表之前，并将环境中的值捕获为强引用，弱引用或无主引用。为了避免循环引用，经常会使用它们。在闭包内捕获的对象默认是强引用，swift允许指定CaptureList让我们自己决定如何捕获闭包内使用的值    
+CaptureList即捕获列表，位于代码中的闭包参数列表之前，并将环境中的值捕获为强引用，弱引用或无主引用。在闭包内捕获的对象默认是强引用，swift允许指定CaptureList让我们自己决定如何捕获闭包内使用的值    
+
+```swift
+var a = 0
+var b = 0
+let closure : () -> () = { print(a, b) }
+closure()   // 0 0
+a = 3
+b = 7
+closure()  // 3 7
+// 我们可以很直观的看到现在的a,b值都改变了。swift的闭包中捕获到的值是捕获的引用。所以一旦你改变了这些捕获变量的值，在闭包中就会反应出来
+
+// -------------------------------------
+
+// 捕获列表
+var c = 0
+var d = 0
+let anotherClosure : () -> () = {  [c, d]  in
+    print(c, d)
+}
+anotherClosure() // 0 0
+c = 3
+d = 7
+anotherClosure() // 0 0
+// 显而易见，当你使用了捕获列表之后，你无论怎么在闭包外面操作改变原始的值。闭包并不关心。因为这个时候它已经不是捕获的引用了，而是最初原始值的copy副本
+```
 
 ### 强引用  
 

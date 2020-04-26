@@ -621,9 +621,11 @@ prepareMethodLists(Class cls, method_list_t **addedLists, int addedCount,
 static void 
 attachCategories(Class cls, category_list *cats, bool flush_caches)
 {
+    // 如果category不存在, do nothing
     if (!cats) return;
     if (PrintReplacedMethods) printReplacements(cls, cats);
 
+    // 判断当前的cls是不是MetaClass
     bool isMeta = cls->isMetaClass();
 
     // fixme rearrange to remove these intermediate allocations
@@ -640,6 +642,7 @@ attachCategories(Class cls, category_list *cats, bool flush_caches)
     int protocount = 0;
     int i = cats->count;
     bool fromBundle = NO;
+    // category列表, 从后往前添加
     while (i--) {
         auto& entry = cats->list[i];
 
@@ -661,9 +664,12 @@ attachCategories(Class cls, category_list *cats, bool flush_caches)
         }
     }
 
+    // class的data域
     auto rw = cls->data();
 
+    // 把category的方法组成方法列表
     prepareMethodLists(cls, mlists, mcount, NO, fromBundle);
+    // 把category中的方法列表加入class的method列表中
     rw->methods.attachLists(mlists, mcount);
     free(mlists);
     if (flush_caches  &&  mcount > 0) flushCaches(cls);
@@ -2031,10 +2037,13 @@ map_images(unsigned count, const char * const paths[],
 extern bool hasLoadMethods(const headerType *mhdr);
 extern void prepare_load_methods(const headerType *mhdr);
 
+// 有新的镜像被加载到 runtime 时，调用 load_images 方法
+// __unused: 我们定义了变量后，如果不使用就会出现警告，如果在变量前加__unused前缀，就可以免除警告。其原理是告诉编译器，如果变量未使用就不参与编译
 void
 load_images(const char *path __unused, const struct mach_header *mh)
 {
     // Return without taking locks if there are no +load methods here.
+    // 快速查询有没有load方法, 如果没有, 直接返回
     if (!hasLoadMethods((const headerType *)mh)) return;
 
     recursive_mutex_locker_t lock(loadMethodLock);
@@ -2578,6 +2587,7 @@ void _read_images(header_info **hList, uint32_t hCount, int totalClasses, int un
             // Then, rebuild the class's method lists (etc) if 
             // the class is realized. 
             bool classExists = NO;
+            // 把category的实例方法、协议以及属性添加到类上
             if (cat->instanceMethods ||  cat->protocols  
                 ||  cat->instanceProperties) 
             {
@@ -2593,6 +2603,7 @@ void _read_images(header_info **hList, uint32_t hCount, int totalClasses, int un
                 }
             }
 
+            // 把category的类方法和协议添加到类的metaclass上
             if (cat->classMethods  ||  cat->protocols  
                 ||  (hasClassProperties && cat->_classProperties)) 
             {
@@ -2699,8 +2710,12 @@ static void schedule_class_load(Class cls)
     if (cls->data()->flags & RW_LOADED) return;
 
     // Ensure superclass-first ordering
+    // schedule的意思是 计划（表）；时间表；一览表
+    // schedule_class_load是把load方法加入到load表中
+    // 可以看到先加入的是class的superclass的load方法
+    // 然后加入的才是class的load方法
+    // 这就是为什么调用一个class的load方法会先调用superclass的load方法的原因
     schedule_class_load(cls->superclass);
-
     add_class_to_loadable_list(cls);
     cls->setInfo(RW_LOADED); 
 }
@@ -2709,6 +2724,8 @@ static void schedule_class_load(Class cls)
 bool hasLoadMethods(const headerType *mhdr)
 {
     size_t count;
+    // 如果Class和Category都没有load方法, 返回false, 否则返回true
+    // 先查找Class中的load方法是否存在, 如果不存在, 再找到Category中是否存在load方法
     if (_getObjc2NonlazyClassList(mhdr, &count)  &&  count > 0) return true;
     if (_getObjc2NonlazyCategoryList(mhdr, &count)  &&  count > 0) return true;
     return false;
@@ -2720,19 +2737,26 @@ void prepare_load_methods(const headerType *mhdr)
 
     runtimeLock.assertWriting();
 
+    // _getObjc2NonlazyClassList获取class列表
     classref_t *classlist = 
         _getObjc2NonlazyClassList(mhdr, &count);
     for (i = 0; i < count; i++) {
+        // 遍历每一个class
+        // 然后把class中的所有的load方法加入到loadable_lis表中
+        // 这个方法会先把class的superclass的load方法加入list中, 然后把class的load方法加入到list中
         schedule_class_load(remapClass(classlist[i]));
     }
 
+    // 然后再把category中的load方法加入到表中
     category_t **categorylist = _getObjc2NonlazyCategoryList(mhdr, &count);
     for (i = 0; i < count; i++) {
+        // 遍历每一个category
         category_t *cat = categorylist[i];
         Class cls = remapClass(cat->cls);
         if (!cls) continue;  // category for ignored weak-linked class
         realizeClass(cls);
         assert(cls->ISA()->isRealized());
+        // 把category中的load方法加入到loadable_categories表中
         add_category_to_loadable_list(cat);
     }
 }

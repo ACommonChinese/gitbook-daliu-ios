@@ -81,6 +81,11 @@ void add_class_to_loadable_list(Class cls)
                               sizeof(struct loadable_class));
     }
     
+    // loadable_classes[0].clas = cls (Class 0 对象)
+    // loadable_classes[0].method = method (Class 0 的load方法)
+    // loadable_classes[1].clas = cls (Class 1 对象)
+    // loadable_classes[1].method = method (Class 1 的load方法)
+    // ...
     loadable_classes[loadable_classes_used].cls = cls;
     loadable_classes[loadable_classes_used].method = method;
     loadable_classes_used++;
@@ -99,9 +104,11 @@ void add_category_to_loadable_list(Category cat)
 
     loadMethodLock.assertLocked();
 
+    // 获取category中的load方法
     method = _category_getLoadMethod(cat);
 
     // Don't bother if cat has no +load method
+    // 如果category中不存在load方法什么都不做
     if (!method) return;
 
     if (PrintLoading) {
@@ -116,7 +123,12 @@ void add_category_to_loadable_list(Category cat)
                               loadable_categories_allocated *
                               sizeof(struct loadable_category));
     }
-
+    
+    // loadable_categories[0].cat = cat (Category 0 结构体对象)
+    // loadable_categories[0].method = method (category 0 的load方法)
+    // loadable_categories[1].cat = cat (Category 1 结构体对象)
+    // loadable_categories[1].method = method (category 1 的load方法)
+    // ...
     loadable_categories[loadable_categories_used].cat = cat;
     loadable_categories[loadable_categories_used].method = method;
     loadable_categories_used++;
@@ -306,10 +318,10 @@ static bool call_category_loads(void)
 /***********************************************************************
 * call_load_methods
 * Call all pending class and category +load methods.
-* Class +load methods are called superclass-first. 
-* Category +load methods are not called until after the parent class's +load.
+* Class +load methods are called superclass-first. // 先调superclass的load方法
+* Category +load methods are not called until after the parent class's +load. // Category的load方法在父类load方法之后调用
 * 
-* This method must be RE-ENTRANT, because a +load could trigger 
+* This method must be RE-ENTRANT(重入), because a +load could trigger
 * more image mapping. In addition, the superclass-first ordering 
 * must be preserved in the face of re-entrant calls. Therefore, 
 * only the OUTERMOST call of this function will do anything, and 
@@ -320,7 +332,7 @@ static bool call_category_loads(void)
 * image loading during a +load, and make sure that no 
 * +load method is forgotten because it was added during 
 * a +load call.
-* Sequence:
+* Sequence: 流程如下: 
 * 1. Repeatedly call class +loads until there aren't any more
 * 2. Call category +loads ONCE.
 * 3. Run more +loads if:
@@ -349,11 +361,13 @@ void call_load_methods(void)
 
     do {
         // 1. Repeatedly call class +loads until there aren't any more
+        // 调用完所有的class的load方法
         while (loadable_classes_used > 0) {
             call_class_loads();
         }
 
         // 2. Call category +loads ONCE
+        // class的load方法调完后, 再调category的load方法
         more_categories = call_category_loads();
 
         // 3. Run more +loads if there are classes OR more untried categories

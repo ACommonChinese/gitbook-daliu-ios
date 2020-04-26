@@ -16,7 +16,7 @@ typedef enum {
 } HIShareTypeMask;
 ```
 
-在每一个枚举值后面都赋值一个16进制的数是方便后面用来做运算，上面这种是很早的写法了，在后来有专门针对Option的写法--NSOption
+不过Apple更推荐使用Option的写法: 
 
 ```Objective-C
 typedef NS_OPTIONS(NSUInteger, HIShareTypeMask) {
@@ -58,7 +58,7 @@ if (shareTypes3 & HIShareTypeMaskWeChat) {
 
 # 在Swift中的运用
 
-和OC不同的是”|“和”&“是C语言的运算符，OC和C是可以混编，但是Swift不能和C语言混编，所以在swift中已经没有”|“和”&“这样的运算了 （在Swift1.0中任然可以使用，那时声明的RawOptionsetType协议，但在Swift2.0后就取消了）。在Swift中使用的是OptionSet协议。
+由于`|`和`&`是C语言的运算符，OC和C是可以混编，但是Swift不能和C语言混编，所以在swift中已经没有`|`和`&`这样的运算了 （在Swift1.0中任然可以使用，那时声明的RawOptionsetType协议，但在Swift2.0后就取消了）。在Swift中使用的是OptionSet协议
 
 ```swift
 struct OptionTest: OptionSet {
