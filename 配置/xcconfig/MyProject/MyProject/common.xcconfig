@@ -1,0 +1,17 @@
+//
+//  common.xcconfig
+//  MyProject
+//
+//  Created by 刘威振 on 2020/4/29.
+//  Copyright © 2020 刘威振. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+//
+//  Common.xcconfig
+//  <truncated>
+//  如果你使用 CocoaPods，你应该相应地在你的配置文件之一中包括（include）Pods.debug.xcconfig 或者 Pods.release.xcconfig
+//
+
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) BasicURL='$(BasicURL)' IS_PRODUCTION='$(IS_PRODUCTION)' MOJIE_KEY='$(MOJIE_KEY)'

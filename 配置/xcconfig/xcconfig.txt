@@ -1,0 +1,44 @@
+xcconfig
+https://blog.csdn.net/wei78008023/article/details/79925754
+https://nshipster.com/xcconfig/
+
+Matt: https://nshipster.com/xcconfig/
+Check out [XcodeBuildSettings.com](https://xcodebuildsettings.com/) for a complete reference of every build setting supported for the latest version of Xcode.
+
+very good: 
+https://nshipster.cn/
+
+要想独立分开并且使用时又不用导入头文件可以通过Xcode中的Configurations Setting Fil(.xcconfig)来解决  
+
+#ifdef DEBUG
+#define BaseURL @"192.168.1.1:8080/appname/api"
+#define PublicKEY @"QWE3R23WR09WURI220WR3TTY5ET3CR2X"
+#else
+#define BaseURL @"http://api.appname.com"
+#define PublicKEY @"32GDG4575UB5M97O7M2X32RFH53QWT43"
+#endif
+
+
+debug.xcconfig
+```
+BASE_URL = @"http://debug.com/path/"
+```
+
+release.xcconfig
+```
+BASE_URL = @"http://release.com/path/"
+```
+
+common.xcconfig
+```
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) BASE_URL='$(BASE_URL)' # 自定义键
+```
+
+注意：
+- 使用#include语法来包含其他配置文件，如#include "Common.xcconfig", 最好是放在文件的最后面，放在文件的开头也可以
+- Common.xconfig中第一个键的配置必须有 ：GCC_PREPROCESSOR_DEFINITIONS = $(inherited)，没有Xcode会报错
+- 暴露自定义键时的语法： 宏名='$(key)', 在代码或其他地方使用宏名来引用，'$(key)'：通过key来指定每个模式下的对应的自定义键的名字，通常将宏的名字和key的名字保持一致， 注意等号前后一定不能有空格
+- 特别注意：Common.xconfig中第一个key是GCC_PREPROCESSOR_DEFINITIONS = $(inherited) 后面跟自定义的key，注意在第一个key后面跟上自己定义的key的时候一定不要回车换行，敲一个空格，然后在同一行后面追加就行了，换行会编译错误， 不能换行，不能换行，不能换行！
+
+
+https://blog.csdn.net/vbirdbest/article/details/53454014

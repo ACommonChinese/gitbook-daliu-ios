@@ -1,0 +1,20 @@
+//
+//  release.xcconfig
+//  MyProject
+//
+//  Created by 刘威振 on 2020/4/29.
+//  Copyright © 2020 刘威振. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// APP 请求地址
+BasicURL = @"api.xiaowei.com/rq"
+ 
+// SDK Key
+MOJIE_KEY = @"f5XXXXXXXXXXXXXXXXXXXXX1c43"
+ 
+IS_PRODUCATION = NO //是否试生产环境
+ 
+#include "common.xcconfig"
