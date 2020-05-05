@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6CC5C882-A03D-40D0-8A0A-E590DFA38EE5"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0FCD52EB-DA73-4886-8EE0-7F8360277BA5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "network/DispatchGroupVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
+            landmarkName = "dependencyRequest(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "79F84FB0-FBB1-449F-B763-FF67AC3F2092"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "network/DispatchGroupVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "safeCallOnMainThread(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "79F84FB0-FBB1-449F-B763-FF67AC3F2092 - 116cd3f7d18f202"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "network.DispatchGroupVC.safeCallOnMainThread(() -&gt; ()) -&gt; ()"
+                  moduleName = "network"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuweizhen/Documents/mygit/gitbook-daliu-ios/Demos/sdks/network/DispatchGroupVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "199"
+                  endingLineNumber = "199"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "79F84FB0-FBB1-449F-B763-FF67AC3F2092 - c232adf7c7d5db16"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in network.DispatchGroupVC.safeCallOnMainThread(() -&gt; ()) -&gt; ()"
+                  moduleName = "network"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuweizhen/Documents/mygit/gitbook-daliu-ios/Demos/sdks/network/DispatchGroupVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "200"
+                  endingLineNumber = "200"
+                  offsetFromSymbolStart = "25">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "578B2A30-9ABD-4C05-AAA2-7341540B9946"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "network/DispatchGroupVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
+            landmarkName = "safeCallOnMainThread(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

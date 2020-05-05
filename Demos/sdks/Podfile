@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+# https://www.jianshu.com/p/25b4439c07a5
+# 多个target共用同一个三方库
+# link_with 'sdks' 'network'
+# platform: ios
+# pod "xxx", '~> 1.2.3'
+
+target 'sdks' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for sdks
+end
+
+target 'network' do
+  platform: ios, '13.0'
+  pod 'Alamofire'
+end
