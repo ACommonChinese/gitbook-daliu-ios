@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_WeatherAnimationProject_WeatherAnimationModule : NSObject
+@end
+@implementation PodsDummy_Pods_WeatherAnimationProject_WeatherAnimationModule
+@end

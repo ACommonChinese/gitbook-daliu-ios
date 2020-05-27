@@ -19,6 +19,8 @@
 		ABD4369C2313F35D00B105D0 /* MyBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ABD4369B2313F35D00B105D0 /* MyBundle.bundle */; };
 		ABD436D92314CA8800B105D0 /* Account.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD436D42314C64200B105D0 /* Account.framework */; };
 		ABD436DA2314CA8800B105D0 /* Account.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABD436D42314C64200B105D0 /* Account.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DAA71816246EAAD600F7D99D /* 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA71814246EAAD500F7D99D /* 1@3x.png */; };
+		DAA71817246EAAD600F7D99D /* 1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA71815246EAAD600F7D99D /* 1@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		ABD436742313E36300B105D0 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		ABD4369B2313F35D00B105D0 /* MyBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MyBundle.bundle; sourceTree = "<group>"; };
 		ABD436CF2314C64200B105D0 /* Account.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Account.xcodeproj; path = Frameworks/Account/Account.xcodeproj; sourceTree = SOURCE_ROOT; };
+		DAA71814246EAAD500F7D99D /* 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1@3x.png"; sourceTree = "<group>"; };
+		DAA71815246EAAD600F7D99D /* 1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				ABD4364A231388A300B105D0 /* ViewController.swift */,
 				ABD4364C231388A300B105D0 /* Main.storyboard */,
 				ABD4366D2313DDAF00B105D0 /* 1.png */,
+				DAA71815246EAAD600F7D99D /* 1@2x.png */,
+				DAA71814246EAAD500F7D99D /* 1@3x.png */,
 				ABD4366F2313DF2600B105D0 /* MainBundleViewController.swift */,
 				ABD436702313DF2600B105D0 /* MainBundleViewController.xib */,
 				ABD4369B2313F35D00B105D0 /* MyBundle.bundle */,
@@ -207,6 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAA71817246EAAD600F7D99D /* 1@2x.png in Resources */,
 				ABD436752313E36300B105D0 /* 2.png in Resources */,
 				ABD43653231388A400B105D0 /* LaunchScreen.storyboard in Resources */,
 				ABD4366E2313DDAF00B105D0 /* 1.png in Resources */,
@@ -214,6 +221,7 @@
 				ABD436722313DF2700B105D0 /* MainBundleViewController.xib in Resources */,
 				ABD4364E231388A300B105D0 /* Main.storyboard in Resources */,
 				ABD4369C2313F35D00B105D0 /* MyBundle.bundle in Resources */,
+				DAA71816246EAAD600F7D99D /* 1@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -151,6 +151,8 @@ Architectures in the fat file: libMyStaticFramework.a are: x86_64 arm64  #可以
 
 ![](images/12.png)
 
+-------------------------------------------------------------------------------
+
 ### .framework
 
 .framework可为动态库和静态库，先来看动态库
@@ -223,7 +225,9 @@ MyFramework: Mach-O 64-bit dynamically linked shared library x86_64 # dynamicall
 
 **注：** 动态库里可以引入一些静态库，如果这些静态库不暴露在外面，则不会和外面项目中的库引起冲突。
 
-**.framework静态库**
+---------------------------------------------------------------
+
+### .framework静态库
 
 .framework静态库和.framework动态库的制作类似，区分有两个：
 - 更改TARGETS -> Build Settings -> Mach-O Type为`Static Library`

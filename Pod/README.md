@@ -1,18 +1,24 @@
 # Pod
 
-ruby是一门脚本语言  
-gem是管理ruby库和程序的标准工具包 - RubyGems is a package management framework for Ruby.  
-CocoaPods是一个负责管理iOS项目中第三方库的工具  
-CocoaPods是基于ruby ecosystem（生态）的，因此首先需要在机器上安装ruby，然后安装gem，使用gem安装或卸载cocaPods  
-spec: sepcification: 规格；说明书；详述
+### 一些概念
+- ruby是一门脚本语言, 20世纪90年代由日本人松本行弘(Yukihiro Matsumoto)开发  
+- gem是管理ruby库和程序的标准工具包 - RubyGems is a package management framework for Ruby.  
+- CocoaPods是一个负责管理iOS项目中第三方库的包管理工具(package management) 
+- CocoaPods是基于ruby ecosystem（生态）的，因此首先需要在机器上安装ruby，然后安装gem，gem是ruby的package managment, 使用gem安装或卸载cocaPods  
 
+### 什么是Specs
+参见[官网](http://guides.cocoapods.org/making/specs-and-specs-repo.html) Specs(sepcification: 规格；说明书；详述) and the Specs Repo    
+
+A Podspec, or Spec, describes a version of a Pod library. One Pod, over the course of time, will have many Specs. It includes details about where the source should be fetched from, what files to use, the build settings to apply, and other general metadata such as its name, version, and description.
 
 You can create one by hand, or run pod spec create to generate a stub. Podspecs are ruby files.  
-`pod spec create Hello`会生成Hello.podspec文件.
-
-From [官网资料：](http://guides.cocoapods.org/making/specs-and-specs-repo.html)
+`pod spec create Hello` 这会生成Hello.podspec文件.
 
 The [Specs Repo](https://github.com/CocoaPods/Specs) is the repository on GitHub that contains the list of all available pods. Every library has an individual folder, which contains sub folders of the available versions of that pod.
+
+- Specs Repo: 对应cocoapod在git hub上的地址
+- Pod: 对应一个作为pod的文件夹，比如我们pod 'AFNetworking', AFNetworking在Specs Repo中是一个文件夹
+- Spec: Pod有多个spec文件，比如AFNetworking可能有多个版本，那就可能有之个spec描述文件，每一个文件描述了特定的版本信息
 
 Here is an example spec:
 
@@ -123,3 +129,5 @@ end
   .spec & .spec.json \[[https://github.com/CocoaPods/guides.cocoapods.org/issues/48](https://github.com/CocoaPods/guides.cocoapods.org/issues/48)
   [https://my.oschina.net/FEEDFACF/blog/1611959\]\(https://github.com/CocoaPods/guides.cocoapods.org/issues/48](https://my.oschina.net/FEEDFACF/blog/1611959]%28https://github.com/CocoaPods/guides.cocoapods.org/issues/48)
   [https://my.oschina.net/FEEDFACF/blog/1611959](https://my.oschina.net/FEEDFACF/blog/1611959)\)
+* [Podfile Syntax Reference Podfile语法](http://guides.cocoapods.org/syntax/podfile.html#podfile)
+* [官网搜索pod](https://cocoapods.org/)

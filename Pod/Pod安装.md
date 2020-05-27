@@ -1,5 +1,7 @@
 # Pod安装
 
+Pod是iOS平台的一个包管理器，package manager，使用
+
 更换gem source为rubychina:  
 gem sources —remove [https://rubygems.org/](https://rubygems.org/) \# 移除掉原有的源  
 gem sources -a gem sources --add [https://gems.ruby-china.com/](https://gems.ruby-china.com/) \#\(参考：[https://gems.ruby-china.com/](https://gems.ruby-china.com/)\)  

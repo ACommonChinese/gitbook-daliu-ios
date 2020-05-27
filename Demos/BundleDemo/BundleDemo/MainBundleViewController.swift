@@ -26,9 +26,30 @@ class MainBundleViewController: UIViewController {
         // self.imageView.image = UIImage(named: "1.png", in: Bundle(for: MainBundleViewController.self), compatibleWith: nil)
         
         // OK -- Bundle.main.path
-        if let path = Bundle.main.path(forResource: "1", ofType: "png") {
-            self.imageView.image = UIImage(contentsOfFile: path)
+//        if let path = Bundle.main.path(forResource: "1", ofType: "png") {
+//            self.imageView.image = UIImage(contentsOfFile: path)
+//        }
+//
+//        if let path2 = Bundle.main.path(forResource: "1", ofType: nil) {
+//            self.imageView.image = UIImage(contentsOfFile: path2)
+//        } else {
+//            print("Path2 Not Found!") // 注意！！ 找不到！
+//            // 使用UIImage的 contentsOfFile: 的方式加载图片必须带上后缀名
+              // 可以是1.png，或者1,然后ofType: png
+//        }
+        
+//        // 如果指定后缀名，依然可以自动根据机型获取相应的@2x和@3x
+//        if let path3 = Bundle.main.path(forResource: "1", ofType: "png") {
+//            self.imageView.image = UIImage(contentsOfFile: path3)
+//        }
+//
+        if let path4 = Bundle.main.path(forResource: "1", ofType: "png") {
+            self.imageView.image = UIImage(named: path4)
+        } else {
+            print("Not Found!")
         }
+        
+        // 总结：如果ofType:没有值，则一定要在name中加后缀名
     }
     
     // 在文件夹images中图片

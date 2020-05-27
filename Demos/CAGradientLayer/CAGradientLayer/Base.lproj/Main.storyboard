@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5uU-qE-Zgc">
+                                <rect key="frame" x="141.5" y="331.5" width="131" height="233"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Wf-eR-bpD">
+                                        <rect key="frame" x="25" y="14" width="81" height="205"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="81" id="Dh0-xt-ACW"/>
+                                            <constraint firstAttribute="height" constant="205" id="p7f-km-Njf"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="233" id="74S-Gw-Ulq"/>
+                                    <constraint firstAttribute="width" constant="131" id="MdW-N2-Heq"/>
+                                    <constraint firstItem="2Wf-eR-bpD" firstAttribute="centerY" secondItem="5uU-qE-Zgc" secondAttribute="centerY" id="Z5a-xB-CDH"/>
+                                    <constraint firstItem="2Wf-eR-bpD" firstAttribute="centerX" secondItem="5uU-qE-Zgc" secondAttribute="centerX" id="vxl-nw-hiL"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4j-V1-978">
+                                <rect key="frame" x="0.0" y="74" width="414" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Add Gradient Layer">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="addGradientLayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Axz-IV-F45"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYP-oH-vd2">
+                                <rect key="frame" x="0.0" y="140" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nCM-e1-5Qp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Remove Gradient Layer">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="removeLayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gba-ZP-o1n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="k4j-V1-978" secondAttribute="trailing" id="7ar-dn-8LP"/>
+                            <constraint firstItem="WYP-oH-vd2" firstAttribute="top" secondItem="k4j-V1-978" secondAttribute="bottom" constant="26" id="7hp-Pq-snZ"/>
+                            <constraint firstItem="5uU-qE-Zgc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CrS-mb-JkC"/>
+                            <constraint firstItem="k4j-V1-978" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="F5B-xL-3To"/>
+                            <constraint firstItem="WYP-oH-vd2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Urp-qq-aAa"/>
+                            <constraint firstItem="5uU-qE-Zgc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZD1-bU-g6N"/>
+                            <constraint firstItem="WYP-oH-vd2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="p7b-8p-jes"/>
+                            <constraint firstItem="k4j-V1-978" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="xcX-iC-gIn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="2Wf-eR-bpD" id="xtM-KQ-uWV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-104.34782608695653" y="91.741071428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1.png" width="81" height="205"/>
+    </resources>
+</document>

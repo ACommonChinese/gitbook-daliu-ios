@@ -17,6 +17,8 @@
 
 @property (nonatomic) NSArray *contentControllers;
 @property (nonatomic) UIPageViewController *pageController;
+@property (weak, nonatomic) IBOutlet UIStepper *stepper;
+
 @end
 
 @implementation ViewController
@@ -37,6 +39,11 @@
     self.pageController.delegate = self;
     self.pageController.dataSource = self;
     
+    
+    // 设置UIPageViewController 尺寸
+    self.pageController.view.frame = CGRectMake(30, 100, UIScreen.mainScreen.bounds.size.width - 60, 400);
+    // self.pageController.view.frame = self.view.bounds;
+    
     // 让UIPageViewController对象显示相应的页数据注意：
     // UIPageViewController要显示的页数据是NSArray。
     // 因为我们定义UIPageViewController对象显示样式为显示一页（options参数指定）
@@ -46,13 +53,15 @@
     [self.pageController setViewControllers:@[self.contentControllers.firstObject] direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
     
     // noted:
-    
-    // 设置UIPageViewController 尺寸
-    self.pageController.view.frame = self.view.bounds;
+
     
     // 在页面上，显示UIPageViewController对象的View
     [self addChildViewController:self.pageController];
     [self.view addSubview:self.pageController.view];
+    
+    self.stepper.minimumValue = 0.0;
+    self.stepper.maximumValue = 3.0;
+    self.stepper.stepValue = 1.0;
 }
 
 #pragma mark -  <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
@@ -75,5 +84,28 @@
     }
     return self.contentControllers[index + 1];
 }
+
+- (IBAction)stepperClick:(UIStepper *)stepper {
+    NSLog(@"-----------------> %d", @(stepper.value).intValue);
+    
+    UIViewController *currentVC = [self.pageController viewControllers].firstObject;
+    NSInteger index = [self.contentControllers indexOfObject:currentVC];
+    
+    NSInteger selectIndex = @(stepper.value).intValue;
+    UIPageViewControllerNavigationDirection direction = UIPageViewControllerNavigationDirectionForward;
+    if (selectIndex < index) {
+        direction = UIPageViewControllerNavigationDirectionReverse;
+    }
+    UIViewController *targetVC = [self.contentControllers objectAtIndex:selectIndex];
+    [self.pageController setViewControllers:@[targetVC] direction:direction animated:YES completion:nil];
+}
+
+/**
+ func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    if completed {
+        refreshIndicatorView(pageViewController.viewControllers![0])
+    }
+ }
+ */
 
 @end
