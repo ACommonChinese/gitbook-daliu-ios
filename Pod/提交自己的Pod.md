@@ -11,6 +11,11 @@
 
 --------------------------------------------------------------------------------------------------
 
+### 示例代码：
+`./demos/提交自己的Pod/ZZQRManager`
+
+--------------------------------------------------------------------------------------------------
+
 ### 编写podspec文件
 
 假设我们项目和库都写好并已上传到github：
@@ -39,7 +44,7 @@ end
 
 source支持git, hg, http, svn的方式，我们这里使用git. 注意上面的version，这个应和git管理的tag值保持一致，因此我们需要打tag
 
-cd ..../ZZQRManager  
+cd ../ZZQRManager  
 git add \*  
 git commit -m "add tag example"  
 git tag 1.3.1 \# 指定tag为1.3.1，和spec中的version保持一致
@@ -64,7 +69,7 @@ git push --tag
 
 ### 上传命令
 
-然后后就可以验证这个podspec文件是否合法：  
+然后就可以验证这个podspec文件是否合法：  
 pod spec lint ZZQRManager.podspec \# 如果只有一个podspec，像本例，ZZQRManager.podspec可以省略不写，另外, lint后可以加--allow-warnings忽略警告.
 
 验证通过后就可以上传到CocoasPods, 依次按下面步骤操作：  
@@ -99,6 +104,8 @@ pod trunk push ZZQRManager.podspec # 忽略警告：pod trunk push ZZQRManager.p
 审核通过后，可以在命令行通过pod search ZZQRManager查找，另外也可以在[https://cocoapods.org/](https://cocoapods.org/)中搜索： 
 
 ![](./images/5.png)
+
+注间右下角有一个“See Podspec”，点开后可以找到本地`~/.cocoapods/repos/cocopods/`下对就的JSON文件
 
 --------------------------------------------------------------------------------------------------
 
