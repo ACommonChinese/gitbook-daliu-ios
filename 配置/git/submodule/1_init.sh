@@ -1,15 +1,9 @@
-# submodule
-
-参考：[云水](https://www.cnblogs.com/lsgxeva/p/8540758.html)  
-
-下面准备工作脚本放入一个文件中，比如：`init.sh`
-并执行`chmod +x ./init.sh`更改权限，然后执行脚本：
-`./init.sh`
-
-```
-# 初始化工作
 #!/bin/zsh
-echo "========= begin ========="
+
+source ./common.sh
+
+echo "初始化"
+
 echo "清空旧的~/submd"
 rm -rf ~/submd
 
@@ -26,6 +20,10 @@ git --git-dir=project2.git init --bare
 mkdir ~/submd/ws
 cd ~/submd/ws
 
+separateLine
+
+echo "初始化project1"
+
 # 初始化project1
 cd ~/submd/ws
 git clone ../repos/project1.git
@@ -36,6 +34,10 @@ git status
 git commit -m "init project1"
 git push origin master
 
+separateLine
+
+echo "初始化project2"
+
 # 初始化project2
 cd ~/submd/ws
 git clone ../repos/project2.git
@@ -45,6 +47,10 @@ git add project-infos.txt
 git status
 git commit -m "init project2"
 git push origin master
+
+separateLine
+
+echo "初始化公共类库"
 
 # 初始化公共类库
 cd ~/submd/ws
@@ -62,9 +68,7 @@ cd lib2
 echo "I'm lib2." > lib2-features
 git add lib2-features
 git commit -m "init lib2"
-git master
+git status
 git push origin master
 
-echo "========= end ==========="
-```
-
+open ~/submd

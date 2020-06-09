@@ -4,12 +4,14 @@
 
 总体流程：creating a private repository, letting CocoaPods know where to find it and adding the podspecs to the repository.
 
-###1. 创建私有索引库
+我们使用pod install时，会寻找cocoapod官方github上的repository中的podspec并安装库，也可以弄一个自己的repository并把自己的私有库放里面
 
-安装Cocoapods会到官方的索引库，生成本地索引库。使用Pod install时，默认情况下，会去更新本地索引库，当然了可以在后面添加--no-repo-update忽略更新。
+### 1. 创建私有索引库
+
+安装Cocoapods会到官方的索引库，生成本地索引库。使用Pod install时，默认情况下，会更新本地索引库，当然了可以在后面添加--no-repo-update忽略更新。
 这个本地索引库地址默认为: `~/.cocoapods/repos/`
 
-这个索引库其实就是存储了一个个库的podspec描述文件。使用pod repo查看本地索引库：
+这个索引库其实就是存储了一个个库的podspec描述文件。使用pod repo查看本地索引库（pod repo list可以列出所以索引库）：
 
 ```ruby
 $ pod repo
@@ -21,7 +23,7 @@ master
 
 上面的URL地址就是公共索引库的地址，里面存放着很多库的podspec索引文件。为了使我们私有的库也支持cocoapods就需要创建私有的索引库。
 
-比如我在[码云](https://gitee.com/)上新建一个私有仓库[MyPrivateRepo](https://gitee.com/aCommonChinese/MyPrivteRepo), 接下来将私有库添加到本地：
+为了演示，我们可以在[码云](https://gitee.com/)上新建一个自己的私有仓库MyPrivateRepo作为索引库（使用GitHub也可以）, 然后使用`pod repo add`命令将私有库添加到本地：
 
 ```ruby
 pod repo add MyPrivateRepo https://gitee.com/aCommonChinese/MyPrivteRepo.git
@@ -44,7 +46,7 @@ MyPrivateRepo
 
 至此，本地私有索引库创建完成。
 
-###2. 创建需要引用的资源
+### 2. 创建需要引用的资源
 
 接下来我们建一个git项目：[GitBookDemos_Thinker](https://gitee.com/aCommonChinese/GitBookDemos_Thinker.git), 在此目录下建个工程
 ![](images/2.png)
@@ -136,7 +138,7 @@ end
 }
 ```
 
-###6. 移除私有库
+### 6. 移除私有库
 `pod repo remove [name]`
 
 ###遇到的错误

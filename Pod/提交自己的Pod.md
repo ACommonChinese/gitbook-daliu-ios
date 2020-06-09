@@ -16,7 +16,7 @@
 
 --------------------------------------------------------------------------------------------------
 
-### 编写podspec文件
+### 1. 编写podspec文件
 
 假设我们项目和库都写好并已上传到github：
 
@@ -44,6 +44,8 @@ end
 
 source支持git, hg, http, svn的方式，我们这里使用git. 注意上面的version，这个应和git管理的tag值保持一致，因此我们需要打tag
 
+### 2. 保持tag一致
+
 cd ../ZZQRManager  
 git add \*  
 git commit -m "add tag example"  
@@ -67,10 +69,10 @@ git push --tag
 
 --------------------------------------------------------------------------------------------------
 
-### 上传命令
+### 3. 调用命令上传podspec文件
 
-然后就可以验证这个podspec文件是否合法：  
-pod spec lint ZZQRManager.podspec \# 如果只有一个podspec，像本例，ZZQRManager.podspec可以省略不写，另外, lint后可以加--allow-warnings忽略警告.
+首先可以使用pod spec lint验证这个podspec文件是否合法：  
+`pod spec lint ZZQRManager.podspec` # 如果只有一个podspec，像本例，ZZQRManager.podspec可以省略不写，另外, lint后可以加--allow-warnings忽略警告.
 
 验证通过后就可以上传到CocoasPods, 依次按下面步骤操作：  
 
@@ -178,3 +180,8 @@ pod spec lint xxx 遇到的错误：
 解决方法：升级CocoaPods:   
 `sudo gem install cocoapods`
 
+*pod trunk push xxx.podspec* 时出现错误：`CDN: trunk URL couldn't be downloaded: https://cdn.cocoapods.org/Specs/a/a/a/GDTMobSDK/4.7.2/GDTMobSDK.podspec.json, error: Net::OpenTimeout` 
+解决方法：
+1. 使用`pod repo list`列出本地所有的repo库地址
+2. 删除非官方的repo, 即只保留 `https://github.com/CocoaPods/Specs.git`，使用命令 `pod repo remove NAME`
+3. 再次提交
