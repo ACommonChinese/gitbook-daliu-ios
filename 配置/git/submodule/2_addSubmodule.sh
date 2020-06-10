@@ -3,17 +3,39 @@
 source ./common.sh
 
 doubleSeparateLine
-echo "为project1添加lib1和lib2"
+echo "      为project1添加lib1和lib2"
 doubleSeparateLine
 
 cd ~/submd/ws/project1
-echo "为project1添加submodule lib1"
 git submodule add ~/submd/repos/lib1.git libs/lib1
+# 调用上面这一句代码, 会：
+# 1. clone下来lib1.git到libs/lib1
+# 2. 在当前目录project1下多了一个.gitmodules文件，文件内容如下：
+# [submodule "libs/lib1"]
+# 	path = libs/lib1
+# 	url = /Users/liuweizhen/submd/repos/lib1.git
+# 这个.gitmodules文件主要记录了本地和仓库的对应关系；
+# 3. 对当前目录project1/.git/config文件进行了修改，添加了如下内容：
+# [submodule "libs/lib1"]
+# 	url = /Users/liuweizhen/submd/repos/lib1.git
+# 	active = true
+# 4. 在.git中多个modules/libs/lib1目录
 
-separateLine
-
-echo "为project1添加submodule lib2"
 git submodule add ~/submd/repos/lib2.git libs/lib2
+# 调用上面这一句代码，会：
+# 1. clone下来lib2.git到libs/lib2
+# 2. 对已存在的.gitmodules文件进行修改，修改后内容如下（添加了一个submodule）
+# [submodule "libs/lib1"]
+# 	path = libs/lib1
+# 	url = /Users/liuweizhen/submd/repos/lib1.git
+# [submodule "libs/lib2"]
+# 	path = libs/lib2
+# 	url = /Users/liuweizhen/submd/repos/lib2.git
+# 3. 对当前目录/.git/config文件进行了修改，添加了如下内容：
+# [submodule "libs/lib2"]
+# 	url = /Users/liuweizhen/submd/repos/lib2.git
+# 	active = true
+
 git status
 # On branch master
 # Changes to be committed:
@@ -24,29 +46,13 @@ git status
 #   new file:   libs/lib2
 #
 
-separateLine
-
-echo "查看.gitmodules"
-cat .gitmodules
-# .gitmodules记录了每个submodule的引用信息，在当前项目的位置(path)以及仓库的位置(url)
-# [submodule "libs/lib1"]
-#         path = libs/lib1
-#         url = /Users/liuweizhen/submd/repos/lib1.git
-# [submodule "libs/lib2"]
-#         path = libs/lib2
-#         url = /Users/liuweizhen/submd/repos/lib2.git
-#
-# 注：使用git submodule add xxx 会把submodule clone下来
-
-separateLine
-
-echo "git submodule add 会 clone 下来submodule的内容，因此需求提交到仓库"
-echo "把 git submodule add ... 命令 clone 下来的内容提交到仓库 project1"
 git commit -a -m "add submodules[lib1,lib2] to project1"
+# [master ef24818] add submodules[lib1,lib2] to project1
+#  3 files changed, 8 insertions(+)
+#  create mode 100644 .gitmodules
+#  create mode 160000 libs/lib1
+#  create mode 160000 libs/lib2
+# 注意 libs/lib1 和 libs/lib2 记录的 mode 为 160000，
+# 这是 Git 中的一种特殊模式，它意味着你是将一次提交记作一项独立的目录记录的，而非将它记录成一个子目录或者一个文件
+
 git push
-
-separateLine
-
-echo "git submodule add 做了以下事："
-echo "1. 在 .gitmodules 和 .git/config 中 记录submodule相关信息"
-echo "2. clone 下来 submodule 的内容"

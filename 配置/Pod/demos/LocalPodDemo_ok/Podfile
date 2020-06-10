@@ -1,0 +1,10 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '10.0'
+
+target 'LocalPodDemo' do
+  use_frameworks!
+
+  # 本地引入，找到当前路径下(和本Podfile一个层级)的 /ZZQRManager/ZZQRManager.podspec 
+  # 当执行pod install时，pod就会找到这个podspec文件并拉代码
+  pod 'ZZQRManager', :path => './ZZQRManager/ZZQRManager.podspec'
+end

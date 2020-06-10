@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-source ./common.sh
+source ./common.sh # 引入公共shell文件
 
 echo "初始化"
 
@@ -71,4 +71,4 @@ git commit -m "init lib2"
 git status
 git push origin master
 
-open ~/submd
+open ~/submd/ws

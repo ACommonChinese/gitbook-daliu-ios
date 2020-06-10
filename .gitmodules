@@ -1,0 +1,6 @@
+[submodule "配置/git/submodule/libs/lib1"]
+	path = 配置/git/submodule/libs/lib1
+	url = /Users/liuweizhen/submd/repos/lib1.git
+[submodule "配置/git/submodule/libs/lib2"]
+	path = 配置/git/submodule/libs/lib2
+	url = /Users/liuweizhen/submd/repos/lib2.git
