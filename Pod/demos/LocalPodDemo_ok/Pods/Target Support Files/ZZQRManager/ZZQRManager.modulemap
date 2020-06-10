@@ -1,6 +1,0 @@
-framework module ZZQRManager {
-  umbrella header "ZZQRManager-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -40,6 +40,7 @@
     * [Pod](配置/Pod/README.md)
         * [Pod安装](配置/Pod/Pod安装.md)
         * [Pod使用](配置/Pod/Pod使用.md)
+        * [Podfile版本号](配置/Pod/Podfile版本号.md)
         * [提交自己的Pod](配置/Pod/提交自己的Pod.md)
         * [本地Pod](配置/Pod/本地Pod.md)
         * [私有Pod](配置/Pod/私有Pod.md)
