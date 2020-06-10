@@ -37,6 +37,7 @@
         * [push](配置/git/push.md)
         * [submodule](配置/git/submodule.md)
         * [ignore](配置/git/ignore.md)
+        * [分支](配置/git/分支.md)
     * [Pod](配置/Pod/README.md)
         * [Pod安装](配置/Pod/Pod安装.md)
         * [Pod使用](配置/Pod/Pod使用.md)
