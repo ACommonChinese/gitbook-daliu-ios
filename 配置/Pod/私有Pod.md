@@ -1,4 +1,4 @@
-# 私有Pod
+私有Pod
 
 [官网Private Pods](http://guides.cocoapods.org/making/private-cocoapods.html)
 
@@ -48,7 +48,7 @@ MyPrivateRepo
 
 ### 2. 创建需要引用的资源
 
-接下来我们建一个git项目：[GitBookDemos_Thinker](https://gitee.com/aCommonChinese/GitBookDemos_Thinker.git), 在此目录下建个工程
+接下来我们建一个git项目：[MyThinker](https://gitee.com/aCommonChinese/MyThinker), 在此目录下建个工程
 ![](images/2.png)
 ![](images/3.png)
 
@@ -58,10 +58,10 @@ git add *
 git commit -m "Init"
 git push
 git tag 1.0.0
-git push --tag
+git push --tag # 上传tag
 ```
 
-###3. 创建podspec文件，引用资源
+### 3. 创建podspec文件，引用资源
 
 `pod spec create Thinker`
 这会生成Thinker.podspec文件，内容：
@@ -69,13 +69,13 @@ git push --tag
 ```ruby
 Pod::Spec.new do |s|
     s.name         = 'Thinker' #此名字应当和文件名相同，即文件名为Thinker.podspec, 此name当为Thinker
-    s.version      = '1.0.0'
+    s.version      = '1.0.0' #这里的version和tag保持一致
     s.summary      = 'pod summary here'
-    s.homepage     = 'https://gitee.com/aCommonChinese/GitBookDemos_Thinker/'
+    s.homepage     = 'https://gitee.com/aCommonChinese/MyThinker/'
     s.license      = 'MIT'
     s.authors      = {'aCommonChinese' => 'liuxing8807@126.com'}
-    s.platform     = :ios, '7.0'
-    s.source       = {:git => "https://gitee.com/aCommonChinese/GitBookDemos_Thinker.git", :tag => s.version}
+    s.platform     = :ios, '10.0'
+    s.source       = {:git => "https://gitee.com/aCommonChinese/MyThinker.git", :tag => s.version}
     s.source_files = 'MyThinkerDemo/MyThinkerDemo/Thinker/*.{h,m}'
     s.resource     = 'MyThinkerDemo/MyThinkerDemo/Thinker/Thinker.bundle'
     s.frameworks   = "UIKit"
@@ -83,7 +83,7 @@ Pod::Spec.new do |s|
 end
 ```
 
-###4. 把podspec文件上传到私有索引库
+### 4. 把podspec文件上传到私有索引库
 
 可以参见：<a href="#file:///提交本地Pod.html">提交本地Pod</a>
 
@@ -97,7 +97,7 @@ pod repo push MyPrivateRepo
 这样上传之后我们可以打开：`open ~/.cocoapods/repos`, 发现：
 ![](images/4.png)
 
-###5. 使用私有库
+### 5. 使用私有库
 使用前可以通过pod search查询：
 
 ```
@@ -114,13 +114,13 @@ pod search Thinker
 接下来新建一项目，编辑Podfile：
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git' #官方source
-source 'https://gitee.com/aCommonChinese/MyPrivteRepo.git' #注意此source必须添加，否则找不到Thinker
+source 'https://gitee.com/aCommonChinese/MyPrivateRepo.git' #注意此source必须添加，否则找不到Thinker
 platform :ios, '7.0'
 
 target 'UseThinkerDemo' do
   use_frameworks!
   #pod 'AFNetworking'
-  pod 'Thinker' # 注：这里不需要指定版本号，否则：[!] A dependency with an external source may not specify version requirements (Thinker).
+  pod 'Thinker', '1.0.0'
 end
 ```
 
@@ -141,10 +141,24 @@ end
 ### 6. 移除私有库
 `pod repo remove [name]`
 
-###遇到的错误
+---------------------------------------------------------------
+
+### 续 升级podspec
+git的tag不区分branch，tag必须是唯一的，因为可以在分支上打tag，然后上传
+基本上只需要修改version即可，然后调用 `pod repo push --allow-warnings MyPrivateRepo Thinker.podspec ` 重新上传
+
+![](images/6.png)
+
+
+### 遇到的错误
 使用pod search可以找到，但使用pod install时出现：`Unable to find a specification for ...`
 参见：[https://cloud.tencent.com/developer/article/1336298](https://cloud.tencent.com/developer/article/1336298)
 
+[!] The spec did not pass validation, due to 2 warnings (but you can use `--allow-warnings` to ignore them).
+
+```shell
+pod repo push --allow-warnings MyPrivateRepo Thinker.podspec 
+```
 
 参考链接：
 
