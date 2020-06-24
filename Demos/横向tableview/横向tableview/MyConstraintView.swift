@@ -32,7 +32,6 @@ class MyConstraintView: UIView, UITableViewDelegate, UITableViewDataSource {
         
         // 先把tableView逆时针旋转90度
         self.tableView.transform = CGAffineTransform.init(rotationAngle: CGFloat(-Float.pi/2)) // -M_PI_2
-        
     }
         
     // MARK: -  UITableViewDelegate, UITableViewDataSource
@@ -44,11 +43,18 @@ class MyConstraintView: UIView, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MyCell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! MyCell
         cell.label.text = String(format: "%ld", indexPath.row)
-        cell.backgroundColor = UIColor.purple
+        cell.backgroundColor = UIColor.clear
+        
+        let redView = UIView(frame: CGRect.init(origin: CGPoint.init(x: 0, y: 0), size: CGSize.init(width: 320, height: 40)))
+        //redView.backgroundColor = UIColor.cyan
+        //cell.selectedBackgroundView = redView
+        let layer = JKWWMainUtils.verticalHighlightLayerWithFrame(frame: redView.bounds)
+        redView.layer.addSublayer(layer)
+        cell.selectedBackgroundView = redView
         
         // 再把cell顺时针旋转90度
         cell.contentView.transform = CGAffineTransform.init(rotationAngle: CGFloat(Float.pi/2))
-        cell.contentView.backgroundColor = UIColor.yellow
+        //cell.contentView.backgroundColor = UIColor.yellow
         return cell
     }
     

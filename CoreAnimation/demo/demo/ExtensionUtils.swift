@@ -12,6 +12,10 @@ func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat)
     return CGRect.init(origin: CGPoint(x: x, y: y), size: CGSize.init(width: width, height: height))
 }
 
+func CGPointMake(_ x: CGFloat, _ y: CGFloat) -> CGPoint {
+    return CGPoint(x: x, y: y)
+}
+
 func CGSizeMake(_ width: CGFloat, _ height: CGFloat) -> CGSize {
     return CGSize.init(width: width, height: height)
 }

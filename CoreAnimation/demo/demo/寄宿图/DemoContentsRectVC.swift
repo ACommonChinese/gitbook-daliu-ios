@@ -29,10 +29,14 @@ class DemoContentsRectVC: UIViewController {
         //需求：切割一个包含4个小图片的拼合图
         //思路很简单：像平常一样载入我们的大图，然后把它赋值给四个独立的图层的`contents`，然后设置每个图层的`contentsRect`来去掉我们不想显示的部分
         let image: UIImage = UIImage(named: "Sprites.png")!
+        let imageView: UIImageView = UIImageView.init(image: image)
+        imageView.frame = CGRectMake(10, 100, 100,  100)
+        self.view.addSubview(imageView)
+        
         let width: CGFloat = 150.0
         let height: CGFloat = 150.0
         let margin: CGFloat = 20.0
-        let topLeft: UIView = UIView.init(frame: CGRectMake(margin, 100, width, height))
+        let topLeft: UIView = UIView.init(frame: CGRectMake(margin, imageView.frame.maxY + 10, width, height))
         let topRight: UIView = UIView.init(frame: CGRectMake(topLeft.frame.maxX + margin, topLeft.frame.minY, width, height))
         let bottomLeft: UIView = UIView.init(frame: CGRectMake(margin, topLeft.frame.maxY + margin, width, height))
         let bottomRight: UIView = UIView.init(frame: CGRectMake(bottomLeft.frame.maxX + margin, bottomLeft.frame.minY, width, height))

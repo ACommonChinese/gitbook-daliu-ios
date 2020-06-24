@@ -7,6 +7,7 @@
 * [App之间跳转](App之间跳转.md)
 * [Toll-free bridging](Toll-free_bridging.md)
 * [UIScrollView约束](UIScrollView约束.md)
+* [UIScrollView高亮选中](UIScrollView高亮选中.md)
 * [推送通知](推送通知.md)
 * [@dynamic](@dynamic.md)
 * [单元测试](单元测试.md)

@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         myView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         myView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         myView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 230).isActive = true
-        myView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        myView.heightAnchor.constraint(equalToConstant: 400).isActive = true
         myView.backgroundColor = UIColor.purple
     }
 }

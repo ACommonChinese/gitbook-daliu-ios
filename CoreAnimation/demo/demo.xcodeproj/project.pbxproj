@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA12C2E8249C8E18004E0EE7 /* DemoDrawRectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12C2E7249C8E18004E0EE7 /* DemoDrawRectVC.swift */; };
 		DA19D86B249794AF006769F4 /* DemoContentsRectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19D86A249794AF006769F4 /* DemoContentsRectVC.swift */; };
 		DA19D86D249797F8006769F4 /* ExtensionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19D86C249797F8006769F4 /* ExtensionUtils.swift */; };
 		DA19D86F2497A0E3006769F4 /* DemoContentsCenterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19D86E2497A0E3006769F4 /* DemoContentsCenterVC.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA12C2E7249C8E18004E0EE7 /* DemoDrawRectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoDrawRectVC.swift; sourceTree = "<group>"; };
 		DA19D86A249794AF006769F4 /* DemoContentsRectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoContentsRectVC.swift; sourceTree = "<group>"; };
 		DA19D86C249797F8006769F4 /* ExtensionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUtils.swift; sourceTree = "<group>"; };
 		DA19D86E2497A0E3006769F4 /* DemoContentsCenterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoContentsCenterVC.swift; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA12C2E9249C9558004E0EE7 /* 锚点 */ = {
+			isa = PBXGroup;
+			children = (
+				DA61304524872A6A0090508C /* DemoAnchorVC.swift */,
+			);
+			path = "锚点";
+			sourceTree = "<group>";
+		};
 		DA19D80824977AD3006769F4 /* 图层与视图 */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +105,8 @@
 				DA613041248729F50090508C /* DemoContentsVC.swift */,
 				DA19D86A249794AF006769F4 /* DemoContentsRectVC.swift */,
 				DA19D86E2497A0E3006769F4 /* DemoContentsCenterVC.swift */,
+				DA12C2E7249C8E18004E0EE7 /* DemoDrawRectVC.swift */,
+				DA61304324872A320090508C /* DemoCustomDrawingVC.swift */,
 				DA19D8702497A161006769F4 /* 2.9.png */,
 				DA19D8722497A4E3006769F4 /* 2.10.png */,
 			);
@@ -128,8 +140,7 @@
 				DA61303C248725CD0090508C /* DLCell.xib */,
 				DA19D80824977AD3006769F4 /* 图层与视图 */,
 				DA19D80924977ADC006769F4 /* 寄宿图 */,
-				DA61304324872A320090508C /* DemoCustomDrawingVC.swift */,
-				DA61304524872A6A0090508C /* DemoAnchorVC.swift */,
+				DA12C2E9249C9558004E0EE7 /* 锚点 */,
 				DA61304724872ABA0090508C /* DemoCoordinateVC.swift */,
 				DA61304924872AE40090508C /* DemoHitTestingVC.swift */,
 				DA61304B24872B4B0090508C /* DemoCornerRadiusVC.swift */,
@@ -223,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA61305A24872DC10090508C /* DemoSolidVC.swift in Sources */,
+				DA12C2E8249C8E18004E0EE7 /* DemoDrawRectVC.swift in Sources */,
 				DA613042248729F50090508C /* DemoContentsVC.swift in Sources */,
 				DA61305624872D650090508C /* DemoAffineTransformVC.swift in Sources */,
 				DA61305424872CD90090508C /* DemoFilterVC.swift in Sources */,

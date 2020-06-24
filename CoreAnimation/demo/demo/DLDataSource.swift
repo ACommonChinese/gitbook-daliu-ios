@@ -16,7 +16,7 @@ enum DLTitle: String {
     /// CustomDrawing
     case CustomDrawing = "CustomDrawing"
     case Anchor = "锚点"
-    case Coordinate = "坐标系"
+    case Coordinate = "坐标系和坐标转换"
     case HitTesting = "HitTesting"
     case CornerRadius = "圆角"
     case Border = "边框"
@@ -30,7 +30,7 @@ enum DLTitle: String {
     case ShapeLayer = "CAShapeLayer"
     
     public static func all() -> [DLTitle] {
-        return [.Layer, .Contents]
+        return [.Layer, .Contents, .Anchor, .Coordinate]
     }
 }
 

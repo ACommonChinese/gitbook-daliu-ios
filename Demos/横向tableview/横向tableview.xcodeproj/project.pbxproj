@@ -19,6 +19,7 @@
 		DA4E3900246FCF8C003CA245 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA4E38FE246FCF8C003CA245 /* MyCell.xib */; };
 		DA4E390224701065003CA245 /* MyConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4E390124701065003CA245 /* MyConstraintView.swift */; };
 		DA4E390424701183003CA245 /* MyConstraintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA4E390324701183003CA245 /* MyConstraintView.xib */; };
+		DA742BAD24A1F84B002104D0 /* JKWWMainUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA742BAC24A1F84B002104D0 /* JKWWMainUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		DA4E38FE246FCF8C003CA245 /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
 		DA4E390124701065003CA245 /* MyConstraintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConstraintView.swift; sourceTree = "<group>"; };
 		DA4E390324701183003CA245 /* MyConstraintView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyConstraintView.xib; sourceTree = "<group>"; };
+		DA742BAC24A1F84B002104D0 /* JKWWMainUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKWWMainUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				DA4E38E7246FC79F003CA245 /* SceneDelegate.swift */,
 				DA4E38E9246FC79F003CA245 /* ViewController.swift */,
 				DA4E390124701065003CA245 /* MyConstraintView.swift */,
+				DA742BAC24A1F84B002104D0 /* JKWWMainUtils.swift */,
 				DA4E390324701183003CA245 /* MyConstraintView.xib */,
 				DA4E38F9246FC7CF003CA245 /* MyView.swift */,
 				DA4E38FB246FC820003CA245 /* MyView.xib */,
@@ -161,6 +164,7 @@
 			files = (
 				DA4E38FA246FC7CF003CA245 /* MyView.swift in Sources */,
 				DA4E38FF246FCF8C003CA245 /* MyCell.swift in Sources */,
+				DA742BAD24A1F84B002104D0 /* JKWWMainUtils.swift in Sources */,
 				DA4E38EA246FC79F003CA245 /* ViewController.swift in Sources */,
 				DA4E390224701065003CA245 /* MyConstraintView.swift in Sources */,
 				DA4E38E6246FC79F003CA245 /* AppDelegate.swift in Sources */,
@@ -309,12 +313,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2KKR9F9FN;
 				INFOPLIST_FILE = "横向tableview/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "daliu.--tableview";
+				PRODUCT_BUNDLE_IDENTIFIER = xiaoniuhy.JKWAnimationModule3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -326,12 +331,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2KKR9F9FN;
 				INFOPLIST_FILE = "横向tableview/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "daliu.--tableview";
+				PRODUCT_BUNDLE_IDENTIFIER = xiaoniuhy.JKWAnimationModule3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

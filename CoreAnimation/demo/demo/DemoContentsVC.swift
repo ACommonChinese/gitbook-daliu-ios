@@ -63,7 +63,7 @@ class DemoContentsVC: UIViewController {
         //`contentsScale`属性定义了寄宿图的像素尺寸和视图大小的比例，默认情况下它是一个值为1.0的浮点数, UIView有一个类似功能但是非常少用到的`contentScaleFactor`属性
         //当用代码的方式来处理寄宿图的时候，一定要记住要手动的设置图层的`contentsScale`属性，否则，你的图片在Retina设备上就显示得不正确啦。代码如下
         //layer.contentsScale = [UIScreen mainScreen].scale;
-        
+        //比如设置了layer.contentsScale=3, 那么一个逻辑点对应的是3*3真实像素
 
         // ======================================================================
         //                          masksToBounds
@@ -96,7 +96,12 @@ class DemoContentsVC: UIViewController {
         // ======================================================================
         //                        drawLayer绘制寄宿图
         // ======================================================================
-        // TODO://Now
+        let drawRectBtn: UIButton = UIButton.init(type: .system)
+        drawRectBtn.frame = CGRectMake(0, contentsCenterBtn.frame.maxY+10, self.view.bounds.size.width, 40)
+        drawRectBtn.setTitle("drawRect", for: .normal)
+        drawRectBtn.setTitleColor(UIColor.white, for: .normal)
+        drawRectBtn.addTarget(self, action: #selector(drawRectBtnClick), for: .touchUpInside)
+        self.view.addSubview(drawRectBtn)
     }
     
     @objc
@@ -107,5 +112,10 @@ class DemoContentsVC: UIViewController {
     @objc
     func contentsCenterBtnClick() {
         self.navigationController?.pushViewController(DemoContentsCenterVC(), animated: true)
+    }
+    
+    @objc
+    func drawRectBtnClick() {
+        self.navigationController?.pushViewController(DemoDrawRectVC(), animated: true)
     }
 }
