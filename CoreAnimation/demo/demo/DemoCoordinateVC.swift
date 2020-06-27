@@ -81,16 +81,14 @@ class DemoCoordinateVC: UIViewController {
     }
     
     func printCoordinateInfo() {
-         // 20.0, 250.0, 300.0, 300.0
-//        printFrame(title: "purpleView frame", view: purpleView)//purpleView frame: 20.0, 250.0, 300.0, 300.0
-//        printFrame(title: "cyanView frame", view: cyanView)//cyanView frame: 20.0, 20.0, 200.0, 200.0
-//        printFrame(title: "yellowView frame", view: yellowView)//cyanView frame: 20.0, 20.0, 200.0, 200.0
-//
+        printFrame(purpleView.frame)    // 20.0, 250.0, 300.0, 300.0
+        printFrame(cyanView.frame)      // 20.0, 20.0, 200.0, 200.0
+        printFrame(yellowView.frame)    // 60.0, 60.0, 100.0, 100.0
+        
         print("1. ------------------------------------------------------")
         print("cyanView 的左上角 相对于 self.view 的 point: ")
         
-        // 下面代码打印结果全是:
-        //40.0, 270.0
+        // 下面代码打印结果全是: 40.0, 270.0
         printPoint(self.view.convert(cyanView.frame.origin, from: purpleView))
         printPoint(self.view.convert(cyanView.bounds.origin, from: cyanView))
         printPoint(cyanView.convert(cyanView.bounds.origin, to: self.view))
@@ -102,8 +100,7 @@ class DemoCoordinateVC: UIViewController {
         
         print("2. ------------------------------------------------------")
         
-        // 下面代码打印结果全是:
-        //40.0, 270.0, 200.0, 200.0
+        // 下面代码打印结果全是: 40.0, 270.0, 200.0, 200.0
         print("cyanView 的 frame 相对于 self.view 的 frame: ")
         printFrame(self.view.convert(cyanView.frame, from: purpleView))
         printFrame(self.view.convert(cyanView.bounds, from: cyanView))
@@ -115,8 +112,7 @@ class DemoCoordinateVC: UIViewController {
         printFrame(purpleView.layer.convert(cyanView.layer.frame, to: self.view.layer))
         
         print("3. ------------------------------------------------------")
-        // 下面代码打印结果全是:
-        //80.0, 80.0
+        // 下面代码打印结果全是: 80.0, 80.0
         print("yellowView 的 point 相对于 purpleView 的 point: ")
         printPoint(purpleView.convert(yellowView.frame.origin, from: cyanView))
         printPoint(purpleView.convert(yellowView.bounds.origin, from: yellowView))
@@ -128,7 +124,7 @@ class DemoCoordinateVC: UIViewController {
         printPoint(cyanView.layer.convert(yellowView.layer.frame.origin, to: purpleView.layer))
         
         print("4. ------------------------------------------------------")
-        
+        // 下面代码打印结果全是: 80.0, 80.0, 100.0, 100.0
         print("yellowView 的 frame 相对于 purpleView 的 frame: ")
         printFrame(purpleView.convert(yellowView.frame, from: cyanView))
         printFrame(purpleView.convert(yellowView.bounds, from: yellowView))
