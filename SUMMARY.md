@@ -87,6 +87,8 @@
     * [AVAudioRecorder](录制和播放音频/AVAudioRecorder.md)
     * [Demo示例](录制和播放音频/Demo示例.md)
     * [pcm转wav](录制和播放音频/pcm转wav.md)
+* [视频](视频/README.md)
+    * [音视频框架](视频/音视频框架.md)
 * [Socket](Socket/README.md)
     * [认识Socket](Socket/认识Socket.md)
     * [Linux_Socket常用函数解析](Socket/Linux_Socket常用函数解析.md)
