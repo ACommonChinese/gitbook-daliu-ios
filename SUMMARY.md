@@ -137,6 +137,7 @@
     * [responseToSelector](Swift/responseToSelector.md)
     * [类型判断和转换](Swift/类型判断和转换.md)
     * [单例](Swift/单例.md)
+    * [命名空间](Swift/命名空间.md)
     * [闭包](Swift/闭包/闭包.md)
         * [尾随闭包](Swift/闭包/尾随闭包.md)
         * [捕获值](Swift/闭包/捕获值.md)

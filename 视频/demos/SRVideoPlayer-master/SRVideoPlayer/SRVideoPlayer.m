@@ -517,7 +517,7 @@ typedef NS_ENUM(NSUInteger, SRControlType) {
 
 #pragma mark - Orientation Methods
 
-- (void)changeToOrientation:(UIInterfaceOrientation)orientation {
+- (void)changeToOrientation:(UIInterfaceOrientation)orientation { //orientation: UIInterfaceOrientationLandscapeRight
     
     if (_currentOrientation == orientation) {
         return;
@@ -529,8 +529,12 @@ typedef NS_ENUM(NSUInteger, SRControlType) {
         case UIInterfaceOrientationPortrait:
         case UIInterfaceOrientationPortraitUpsideDown:
         {
+            //_videoPlayer = [SRVideoPlayer playerWithVideoURL:_videoURL playerView:playerView playerSuperView:self.view];
+            //_playerSuperView: viewController的view
+            //_playerView: 播放视频的视图
             [_playerSuperView addSubview:_playerView];
             __weak typeof(self) weakSelf = self;
+            NSLog(@"%@", NSStringFromCGRect(weakSelf.playerViewOriginalRect));
             [_playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.top.mas_equalTo(CGRectGetMinY(weakSelf.playerViewOriginalRect));
                 make.left.mas_equalTo(CGRectGetMinX(weakSelf.playerViewOriginalRect));

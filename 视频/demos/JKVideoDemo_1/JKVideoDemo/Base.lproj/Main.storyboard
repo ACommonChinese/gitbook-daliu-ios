@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uoj-V3-pMQ">
+                                <rect key="frame" x="20" y="74" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2nW-dK-VWd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="系统AVPlayerViewController">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="systemAVPlayerViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7xa-2E-rVb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aga-TU-pee">
+                                <rect key="frame" x="20" y="194" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ddZ-xf-ii1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="自定义 - 播放远程视频">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="customPlayerForRemote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3pc-3d-rbg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIH-0N-sRx">
+                                <rect key="frame" x="20" y="134" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="y3E-pa-Zcq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="自定义 - 播放本地视频">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="customPlayerForLocal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tEY-Oj-2dm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZIH-0N-sRx" firstAttribute="top" secondItem="Uoj-V3-pMQ" secondAttribute="bottom" constant="20" id="3QU-hY-ReR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aga-TU-pee" secondAttribute="trailing" constant="20" id="KAX-gM-l3V"/>
+                            <constraint firstItem="Uoj-V3-pMQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="LYH-qp-t4t"/>
+                            <constraint firstItem="Uoj-V3-pMQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Lac-Ph-ETQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uoj-V3-pMQ" secondAttribute="trailing" constant="20" id="XfM-Na-A2e"/>
+                            <constraint firstItem="ZIH-0N-sRx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aPd-lv-YZZ"/>
+                            <constraint firstItem="aga-TU-pee" firstAttribute="top" secondItem="ZIH-0N-sRx" secondAttribute="bottom" constant="20" id="dgU-Pj-qYs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZIH-0N-sRx" secondAttribute="trailing" constant="20" id="rD8-Ai-YEY"/>
+                            <constraint firstItem="aga-TU-pee" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ygk-Kn-fea"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="120.53571428571428"/>
+        </scene>
+    </scenes>
+</document>
