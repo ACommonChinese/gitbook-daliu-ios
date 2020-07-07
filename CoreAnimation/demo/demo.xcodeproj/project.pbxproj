@@ -34,8 +34,8 @@
 		DA61305624872D650090508C /* DemoAffineTransformVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61305524872D650090508C /* DemoAffineTransformVC.swift */; };
 		DA61305824872D900090508C /* DemoTransform3DVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61305724872D900090508C /* DemoTransform3DVC.swift */; };
 		DA61305A24872DC10090508C /* DemoSolidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61305924872DC10090508C /* DemoSolidVC.swift */; };
-		DA61305C24872DF10090508C /* DemoShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61305B24872DF10090508C /* DemoShapeLayer.swift */; };
 		DA6ACA7F24A6F6A000A1B073 /* DemoZPositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6ACA7E24A6F6A000A1B073 /* DemoZPositionVC.swift */; };
+		DA6C654124ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6C654024ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,8 +68,8 @@
 		DA61305524872D650090508C /* DemoAffineTransformVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAffineTransformVC.swift; sourceTree = "<group>"; };
 		DA61305724872D900090508C /* DemoTransform3DVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTransform3DVC.swift; sourceTree = "<group>"; };
 		DA61305924872DC10090508C /* DemoSolidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSolidVC.swift; sourceTree = "<group>"; };
-		DA61305B24872DF10090508C /* DemoShapeLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoShapeLayer.swift; sourceTree = "<group>"; };
 		DA6ACA7E24A6F6A000A1B073 /* DemoZPositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoZPositionVC.swift; sourceTree = "<group>"; };
+		DA6C654024ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoHitTestingAndZPositionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +150,8 @@
 				DA61305524872D650090508C /* DemoAffineTransformVC.swift */,
 				DA61305724872D900090508C /* DemoTransform3DVC.swift */,
 				DA61305924872DC10090508C /* DemoSolidVC.swift */,
-				DA61305B24872DF10090508C /* DemoShapeLayer.swift */,
 				DA6ACA7E24A6F6A000A1B073 /* DemoZPositionVC.swift */,
+				DA6C654024ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift */,
 				DA19D86C249797F8006769F4 /* ExtensionUtils.swift */,
 				DA61302D248723DD0090508C /* Assets.xcassets */,
 				DA61302F248723DD0090508C /* LaunchScreen.storyboard */,
@@ -240,7 +240,7 @@
 				DA61305424872CD90090508C /* DemoFilterVC.swift in Sources */,
 				DA61304424872A320090508C /* DemoCustomDrawingVC.swift in Sources */,
 				DA6ACA7F24A6F6A000A1B073 /* DemoZPositionVC.swift in Sources */,
-				DA61305C24872DF10090508C /* DemoShapeLayer.swift in Sources */,
+				DA6C654124ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift in Sources */,
 				DA61304E24872BB40090508C /* DemoBorderVC.swift in Sources */,
 				DA61304824872ABA0090508C /* DemoCoordinateVC.swift in Sources */,
 				DA613040248729DE0090508C /* DemoLayerVC.swift in Sources */,

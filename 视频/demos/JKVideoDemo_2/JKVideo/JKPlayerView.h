@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (AVPlayer *)player;
 - (void)setPlayer:(AVPlayer *)player;
 
-@property (nonatomic, readonly) AVPlayerLayer *playerLayer;
+- (AVPlayerLayer *)playerLayer;
 
 @end
 

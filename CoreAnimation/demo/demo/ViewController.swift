@@ -19,6 +19,7 @@ enum DLTitle: String {
     case Coordinate = "坐标系和坐标转换"
     case HitTesting = "HitTesting"
     case ZPosition = "ZPosition"
+    case HitTestingAndZPosition = "ZPosition引发的HitTesting问题"
     case CornerRadius = "圆角"
     case Border = "边框"
     case Shadow = "阴影"
@@ -31,7 +32,7 @@ enum DLTitle: String {
     case ShapeLayer = "CAShapeLayer"
     
     public static func all() -> [DLTitle] {
-        return [.Layer, .Contents, .Anchor, .Coordinate, .ZPosition, HitTesting]
+        return [.Layer, .Contents, .Anchor, .Coordinate, .ZPosition, HitTesting, HitTestingAndZPosition]
     }
 }
 
@@ -75,10 +76,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.navigationController?.pushViewController(DemoAnchorVC(), animated: true)
         case DLTitle.Coordinate.rawValue: //坐标系和坐标转换
             self.navigationController?.pushViewController(DemoCoordinateVC(), animated: true)
-        case DLTitle.ZPosition.rawValue:
+        case DLTitle.ZPosition.rawValue: //ZPosition改变图层显示顺序
             self.navigationController?.pushViewController(DemoZPositionVC(), animated: true)
         case DLTitle.HitTesting.rawValue: //CALayer的响应者链相关的东西
             self.navigationController?.pushViewController(DemoHitTestingVC(), animated: true)
+        case DLTitle.HitTestingAndZPosition.rawValue: //ZPosition引发的HitTesting问题
+            self.navigationController?.pushViewController(DemoHitTestingAndZPositionVC(), animated: true)
         default:
             print("Not found")
         }

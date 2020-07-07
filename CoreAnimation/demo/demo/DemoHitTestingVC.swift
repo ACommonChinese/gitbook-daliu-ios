@@ -32,6 +32,7 @@ class DemoHitTestingVC: UIViewController {
         self.layerView.layer.addSublayer(self.blueLayer)
     }
     
+    /** 使用containsPoint判断被点击的图层
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //get touch position relative to main view
         guard let touch = touches.first else {
@@ -51,6 +52,29 @@ class DemoHitTestingVC: UIViewController {
             }
         }
     }
+    */
+    
+    // 使用hitTest判断被点击的图层
+    // -hitTest: 方法同样接受一个 CGPoint 类型参数，它返回图层本身，或者包含这个坐标点的叶子节点图层。
+    // 这意味着不再需要像使用 - containsPoint: 那样，人工地在每个子图层变换或者测试点击的坐标。如果这个点在最外面图层的范围之外，则返回nil
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //get touch position
+        guard let touch = touches.first else {
+            return
+        }
+        let point: CGPoint = touch.location(in: self.view)
+        //get touch layer
+        let layer: CALayer? = self.layerView.layer.hitTest(point) // 如果这个点在layerView的子图层上, 会返回这个子图层, 如果点不在叶子图层上, 会返回自已(同理, 如果子图层又有子图层, 而点又在这个子图层的子图层了, 会返回最后的子图层)
+        //get layer using hitTest
+        if let bLayer = layer {
+            if bLayer == self.blueLayer  {
+                showAlert("Inside Blue Layer")
+            }
+            else if (bLayer == self.layerView.layer) {
+                showAlert("Inside White Layer")
+            }
+        }
+    }
     
     func showAlert(_ title: String) {
         let alert = UIAlertController.init(title: title, message: nil, preferredStyle: .alert)
@@ -58,4 +82,8 @@ class DemoHitTestingVC: UIViewController {
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    // 注意当调用图层的 -hitTest: 方法时，测算的顺序严格依赖于图层树当中的图层顺序(和UIView处理事件类似)。即寻找顺序为 叶子图层 > 中间的子图层... > 自己
+    // 之前提到的 zPosition 属性可以看起来改变屏幕上图层的显示顺序，但不能改变事件传递的顺序。
+    // 这意味着如果改变了图层的z轴顺序，你会发现将不能够检测到最前方的视图点击事件，这是因为被另一个图层遮盖住了，虽然它的 zPosition 值较小，但是在图层树中的顺序靠前
 }
