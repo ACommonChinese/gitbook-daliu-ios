@@ -1,20 +1,38 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '10.0'
 
 #workspace文件名
 workspace 'Pod管理.xcworkspace'
 
 #主工程路径
-project 'Pod管理/Pod管理.xcodeproj'
-
+project 'Pod管理/Pod管理.xcodeproj' # file Pod管理: Pod管理: Mach-O 64-bit executable x86_64
+use_frameworks!
 target 'Pod管理' do
-  project 'Pod管理/Pod管理.xcodeproj'
+  platform :ios, '9.0'
+  use_frameworks!
+  project 'Pod管理/Pod管理.xcodeproj' #target 'Pod管理' 使用此project编译
   pod 'AFNetworking'
 end
 
 target 'WeatherAnimationProject' do
+  platform :ios, '9.0'
+  use_frameworks!
   project 'WeatherAnimationProject/WeatherAnimationProject.xcodeproj'
-  
   target 'WeatherAnimationModule' do
-    #pod 'AFNetworking'
+    use_frameworks! # WeatherAnimationModule: Mach-O 64-bit dynamically linked shared library x86_64
+    pod 'AFNetworking'
+  end
+end
+
+target 'Module2Demo' do
+  platform :ios, '9.0'
+  use_frameworks!
+  project 'Module2Demo/Module2Demo.xcodeproj'
+  target 'Module2' do
+    use_frameworks! # Module2: Mach-O 64-bit dynamically linked shared library x86_64
+    pod 'AFNetworking'
+    # file AFNetworking  # AFNetworking会被编译成动态库, 即使上面有多次引入, 也只会有一份AFNetworking.framework
+    # AFNetworking: Mach-O 64-bit dynamically linked shared library x86_64
   end
 end

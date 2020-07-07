@@ -1,0 +1,6 @@
+framework module Pods_WeatherAnimationProject_WeatherAnimationModule {
+  umbrella header "Pods-WeatherAnimationProject-WeatherAnimationModule-umbrella.h"
+
+  export *
+  module * { export * }
+}

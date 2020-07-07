@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <WeatherAnimationModule/WeatherAnimationModule.h>
+#import <Module2/Module2.h>
 
 @interface ViewController ()
 
@@ -20,7 +21,12 @@
     
     Person *p = Person.new;
     [p eat];
+    
+    AFHTTPSessionManager *manager = [p getManager];
+    NSLog(@"%@", manager);
+    
+    Hello *hello = Hello.new;
+    [hello say:@"祖国是什么? 祖国是人民."];
 }
-
 
 @end

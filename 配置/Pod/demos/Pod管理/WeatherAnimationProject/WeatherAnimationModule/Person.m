@@ -14,4 +14,8 @@
     NSLog(@"eat");
 }
 
+- (AFHTTPSessionManager *)getManager {
+    return [AFHTTPSessionManager manager];
+}
+
 @end

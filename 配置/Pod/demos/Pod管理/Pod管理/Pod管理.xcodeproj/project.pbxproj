@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CDBED96A9BD2CB0B37A10F96 /* libPods-Pod管理.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B818D743BDB3E309D1A1B9 /* libPods-Pod管理.a */; };
+		DA28557D24B4B6E300C37E1C /* WeatherAnimationModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA67B645247E7BDD00790E94 /* WeatherAnimationModule.framework */; };
+		DA28557E24B4B6E300C37E1C /* WeatherAnimationModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA67B645247E7BDD00790E94 /* WeatherAnimationModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA67B5BC247E703A00790E94 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA67B5BB247E703A00790E94 /* AppDelegate.m */; };
 		DA67B5BF247E703A00790E94 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA67B5BE247E703A00790E94 /* SceneDelegate.m */; };
 		DA67B5C2247E703A00790E94 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA67B5C1247E703A00790E94 /* ViewController.m */; };
@@ -15,18 +16,19 @@
 		DA67B5C7247E703D00790E94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA67B5C6247E703D00790E94 /* Assets.xcassets */; };
 		DA67B5CA247E703D00790E94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA67B5C8247E703D00790E94 /* LaunchScreen.storyboard */; };
 		DA67B5CD247E703D00790E94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA67B5CC247E703D00790E94 /* main.m */; };
-		DA67B646247E7BDD00790E94 /* WeatherAnimationModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA67B645247E7BDD00790E94 /* WeatherAnimationModule.framework */; };
-		DA67B647247E7BDD00790E94 /* WeatherAnimationModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA67B645247E7BDD00790E94 /* WeatherAnimationModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DA7D9D4D24B4C33B00739257 /* Module2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7D9D4C24B4C33B00739257 /* Module2.framework */; };
+		DA7D9D4E24B4C33B00739257 /* Module2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA7D9D4C24B4C33B00739257 /* Module2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		DA67B648247E7BDD00790E94 /* Embed Frameworks */ = {
+		DA28557F24B4B6E300C37E1C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DA67B647247E7BDD00790E94 /* WeatherAnimationModule.framework in Embed Frameworks */,
+				DA28557E24B4B6E300C37E1C /* WeatherAnimationModule.framework in Embed Frameworks */,
+				DA7D9D4E24B4C33B00739257 /* Module2.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -34,7 +36,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		82C987D45B34C9500AB787E2 /* Pods-Pod管理.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pod管理.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-Pod管理/Pods-Pod管理.release.xcconfig"; sourceTree = "<group>"; };
+		86E2143BC2BB45B22DA0EFF3 /* Pods-Pod管理.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pod管理.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-Pod管理/Pods-Pod管理.debug.xcconfig"; sourceTree = "<group>"; };
 		DA67B5B7247E703A00790E94 /* Pod管理.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pod管理.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA67B5BA247E703A00790E94 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA67B5BB247E703A00790E94 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -48,8 +50,9 @@
 		DA67B5CB247E703D00790E94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA67B5CC247E703D00790E94 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DA67B645247E7BDD00790E94 /* WeatherAnimationModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherAnimationModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA25DEBC6AF66414A9FD357E /* Pods-Pod管理.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pod管理.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-Pod管理/Pods-Pod管理.debug.xcconfig"; sourceTree = "<group>"; };
-		F9B818D743BDB3E309D1A1B9 /* libPods-Pod管理.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pod管理.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA7D9D4C24B4C33B00739257 /* Module2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Module2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1420D27BD52FCF13CD010C9 /* Pods_Pod__.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pod__.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E32A9E0ADB3F79A218062359 /* Pods-Pod管理.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pod管理.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-Pod管理/Pods-Pod管理.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA67B646247E7BDD00790E94 /* WeatherAnimationModule.framework in Frameworks */,
-				CDBED96A9BD2CB0B37A10F96 /* libPods-Pod管理.a in Frameworks */,
+				DA28557D24B4B6E300C37E1C /* WeatherAnimationModule.framework in Frameworks */,
+				DA7D9D4D24B4C33B00739257 /* Module2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,8 +107,9 @@
 		EAF6EF9D310730FAECD9E796 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA7D9D4C24B4C33B00739257 /* Module2.framework */,
 				DA67B645247E7BDD00790E94 /* WeatherAnimationModule.framework */,
-				F9B818D743BDB3E309D1A1B9 /* libPods-Pod管理.a */,
+				E1420D27BD52FCF13CD010C9 /* Pods_Pod__.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -113,8 +117,8 @@
 		FB5A83B56F15DBC53102B0BD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EA25DEBC6AF66414A9FD357E /* Pods-Pod管理.debug.xcconfig */,
-				82C987D45B34C9500AB787E2 /* Pods-Pod管理.release.xcconfig */,
+				86E2143BC2BB45B22DA0EFF3 /* Pods-Pod管理.debug.xcconfig */,
+				E32A9E0ADB3F79A218062359 /* Pods-Pod管理.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -130,7 +134,8 @@
 				DA67B5B3247E703A00790E94 /* Sources */,
 				DA67B5B4247E703A00790E94 /* Frameworks */,
 				DA67B5B5247E703A00790E94 /* Resources */,
-				DA67B648247E7BDD00790E94 /* Embed Frameworks */,
+				DA28557F24B4B6E300C37E1C /* Embed Frameworks */,
+				51390AA3AA6BB4EFA3961FFB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,6 +212,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51390AA3AA6BB4EFA3961FFB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pod管理/Pods-Pod管理-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pod管理/Pods-Pod管理-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pod管理/Pods-Pod管理-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -357,11 +379,12 @@
 		};
 		DA67B5D1247E703D00790E94 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA25DEBC6AF66414A9FD357E /* Pods-Pod管理.debug.xcconfig */;
+			baseConfigurationReference = 86E2143BC2BB45B22DA0EFF3 /* Pods-Pod管理.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Pod管理/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,11 +397,12 @@
 		};
 		DA67B5D2247E703D00790E94 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82C987D45B34C9500AB787E2 /* Pods-Pod管理.release.xcconfig */;
+			baseConfigurationReference = E32A9E0ADB3F79A218062359 /* Pods-Pod管理.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Pod管理/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

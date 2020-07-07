@@ -2,12 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Pod&#x7ba1;&#x7406;/Pod&#x7ba1;&#x7406;.xcodeproj">
+      location = "group:Pod管理/Pod管理.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:WeatherAnimationProject/WeatherAnimationProject.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Module2Demo/Module2Demo.xcodeproj">
    </FileRef>
 </Workspace>
