@@ -33,7 +33,15 @@ enum DLTitle: String {
     case ShapeLayer = "CAShapeLayer"
     
     public static func all() -> [DLTitle] {
-        return [.Layer, .Contents, .Anchor, .Coordinate, .ZPosition, HitTesting, .HitTestingAndZPosition, .LayoutSublayersOfLayer]
+        return [.Layer,
+                .Contents,
+                .Anchor,
+                .Coordinate,
+                .ZPosition,
+                .HitTesting,
+                .HitTestingAndZPosition,
+                .LayoutSublayersOfLayer,
+                .CornerRadius]
     }
 }
 
@@ -85,6 +93,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.navigationController?.pushViewController(DemoHitTestingAndZPositionVC(), animated: true)
         case DLTitle.LayoutSublayersOfLayer.rawValue:
             self.navigationController?.pushViewController(DemoLayoutSublayersOfLayerVC(), animated: true)
+        case DLTitle.CornerRadius.rawValue:
+            self.navigationController?.pushViewController(DemoCornerRadiusVC(), animated: true)
         default:
             print("Not found")
         }
