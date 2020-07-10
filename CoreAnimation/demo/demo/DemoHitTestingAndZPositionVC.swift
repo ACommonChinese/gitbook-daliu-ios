@@ -27,23 +27,30 @@ class DemoHitTestingAndZPositionVC: UIViewController {
         redView.backgroundColor   = UIColor.red
         greenView.backgroundColor = UIColor.green
         blueView.backgroundColor  = UIColor.blue
-        self.redView.frame        = CGRectMake(20, 20, view.bounds.size.width - 40, 200)
-        self.greenView.frame      = CGRectMake(30, 20, redView.frame.width-30, redView.frame.size.height-30)
-        self.blueView.frame       = CGRectMake(30, 20, greenView.frame.width-20, greenView.frame.height - 10)
+        self.redView.frame        = CGRectMake(10, 10, 200, 200)
+        self.greenView.frame      = CGRectMake(60, 60, 200, 200)
+        self.blueView.frame       = CGRectMake(110, 110, 200, 200)
         self.view.addSubview(redView)
         self.view.addSubview(greenView)
         self.view.addSubview(blueView)
+        self.attachLineForGreenView()
         
         // 改变zpostion的按钮
         let btn = UIButton.init(type: .system)
-        btn.frame = CGRectMake(0, redView.frame.maxY + 20, self.view.frame.size.width, 50)
-        btn.setTitle("点击按钮改变下方视图的zPosition", for: .normal)
+        btn.frame = CGRectMake(0, blueView.frame.maxY + 20, self.view.frame.size.width, 50)
+        btn.setTitle("greenView.layer.zPosition = 1", for: .normal)
         btn.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         btn.setTitleColor(UIColor.black, for: .normal)
         self.view.addSubview(btn)
         
-        // 灰色视图
+        let restoreBtn = UIButton.init(type: .system)
+        restoreBtn.frame = CGRectMake(0, btn.frame.maxY + 20, self.view.frame.size.width, 50)
+        restoreBtn.setTitle("greenView.layer.zPosition = 0", for: .normal)
+        restoreBtn.addTarget(self, action: #selector(restoreBtnClick), for: .touchUpInside)
+        restoreBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        restoreBtn.setTitleColor(UIColor.black, for: .normal)
+        self.view.addSubview(restoreBtn)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -53,17 +60,25 @@ class DemoHitTestingAndZPositionVC: UIViewController {
         }
         let point: CGPoint = touch.location(in: self.view)
         //get touch layer
-        let layer: CALayer? = self.redView.layer.hitTest(point)
-        guard let targetLayer = layer else {
+        //let layer: CALayer? = self.redView.layer.hitTest(point)
+        var layer: CALayer? = self.blueView.layer.hitTest(point)
+        if nil == layer {
+            layer = self.greenView.layer.hitTest(point)
+            if nil == layer {
+                layer = self.redView.layer.hitTest(point)
+            }
+        }
+        guard let _ = layer else {
+            showAlert("在视图外")
             return
         }
-        if targetLayer == self.blueView.layer {
+        if layer == self.blueView.layer {
             showAlert("Inside Blue View")
         }
-        if targetLayer == self.greenView.layer {
+        if layer == self.greenView.layer {
             showAlert("Inside Green View")
         }
-        if targetLayer == self.redView.layer {
+        if layer == self.redView.layer {
             showAlert("Inside Red View")
         }
     }
@@ -77,10 +92,21 @@ class DemoHitTestingAndZPositionVC: UIViewController {
     
     @objc
     func btnClick() {
-        blueView.layer.zPosition = 1;
+        greenView.layer.zPosition = 1
     }
-}
-
-class GrayView : UIView {
     
+    @objc
+    func restoreBtnClick() {
+        greenView.layer.zPosition = 0
+    }
+    
+    //添加辅助线方便识别
+    func attachLineForGreenView() {
+        let hLine = UIView(frame: CGRectMake(50, 50, greenView.frame.size.width-50, 2))
+        hLine.backgroundColor = UIColor.blue
+        let vLine = UIView(frame: CGRectMake(50, 50, 2, greenView.frame.size.height - 50))
+        vLine.backgroundColor = UIColor.blue
+        greenView.addSubview(hLine)
+        greenView.addSubview(vLine)
+    }
 }

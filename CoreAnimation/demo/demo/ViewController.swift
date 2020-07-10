@@ -20,6 +20,7 @@ enum DLTitle: String {
     case HitTesting = "HitTesting"
     case ZPosition = "ZPosition"
     case HitTestingAndZPosition = "ZPosition引发的HitTesting问题"
+    case LayoutSublayersOfLayer = "LayoutSublayersOfLayer"
     case CornerRadius = "圆角"
     case Border = "边框"
     case Shadow = "阴影"
@@ -32,7 +33,7 @@ enum DLTitle: String {
     case ShapeLayer = "CAShapeLayer"
     
     public static func all() -> [DLTitle] {
-        return [.Layer, .Contents, .Anchor, .Coordinate, .ZPosition, HitTesting, HitTestingAndZPosition]
+        return [.Layer, .Contents, .Anchor, .Coordinate, .ZPosition, HitTesting, .HitTestingAndZPosition, .LayoutSublayersOfLayer]
     }
 }
 
@@ -82,9 +83,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.navigationController?.pushViewController(DemoHitTestingVC(), animated: true)
         case DLTitle.HitTestingAndZPosition.rawValue: //ZPosition引发的HitTesting问题
             self.navigationController?.pushViewController(DemoHitTestingAndZPositionVC(), animated: true)
+        case DLTitle.LayoutSublayersOfLayer.rawValue:
+            self.navigationController?.pushViewController(DemoLayoutSublayersOfLayerVC(), animated: true)
         default:
             print("Not found")
         }
     }
 }
-

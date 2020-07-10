@@ -63,8 +63,19 @@ class DemoHitTestingVC: UIViewController {
             return
         }
         let point: CGPoint = touch.location(in: self.view)
+        
         //get touch layer
-        let layer: CALayer? = self.layerView.layer.hitTest(point) // 如果这个点在layerView的子图层上, 会返回这个子图层, 如果点不在叶子图层上, 会返回自已(同理, 如果子图层又有子图层, 而点又在这个子图层的子图层了, 会返回最后的子图层)
+        //self.layerView: 白色的视图
+        let layer: CALayer? = self.layerView.layer.hitTest(point)
+        // 如果这个点在layerView的子图层上, 会返回这个子图层, 如果点不在叶子图层上, 会返回自已(同理, 如果子图层又有子图层, 而点又在这个子图层的子图层了, 会返回最后的子图层)
+        /**
+         From Apple:
+         func hitTest(_ p: CGPoint) -> CALayer?
+         Returns the farthest descendant of the receiver in the layer hierarchy (including itself) that contains the specified point.\
+         参数: p: CGPoint A point in the coordinate system of the receiver's superlayer.
+         返回值CALayer: The layer that contains thePoint or nil if the point lies outside the receiver’s bounds rectangle.
+         */
+        
         //get layer using hitTest
         if let bLayer = layer {
             if bLayer == self.blueLayer  {
