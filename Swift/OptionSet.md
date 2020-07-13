@@ -56,7 +56,7 @@ if (shareTypes3 & HIShareTypeMaskWeChat) {
 }
 ```
 
-# 在Swift中的运用
+### 在Swift中的运用
 
 由于`|`和`&`是C语言的运算符，OC和C是可以混编，但是Swift不能和C语言混编，所以在swift中已经没有`|`和`&`这样的运算了 （在Swift1.0中任然可以使用，那时声明的RawOptionsetType协议，但在Swift2.0后就取消了）。在Swift中使用的是OptionSet协议
 
