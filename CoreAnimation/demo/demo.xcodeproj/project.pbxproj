@@ -27,7 +27,6 @@
 		DA61304824872ABA0090508C /* DemoCoordinateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61304724872ABA0090508C /* DemoCoordinateVC.swift */; };
 		DA61304A24872AE40090508C /* DemoHitTestingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61304924872AE40090508C /* DemoHitTestingVC.swift */; };
 		DA61304C24872B4B0090508C /* DemoCornerRadiusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61304B24872B4B0090508C /* DemoCornerRadiusVC.swift */; };
-		DA61304E24872BB40090508C /* DemoBorderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61304D24872BB40090508C /* DemoBorderVC.swift */; };
 		DA61305024872BD20090508C /* DemoShadowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61304F24872BD20090508C /* DemoShadowVC.swift */; };
 		DA61305224872C4A0090508C /* DemoMaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61305124872C4A0090508C /* DemoMaskVC.swift */; };
 		DA61305424872CD90090508C /* DemoFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61305324872CD90090508C /* DemoFilterVC.swift */; };
@@ -62,7 +61,6 @@
 		DA61304724872ABA0090508C /* DemoCoordinateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCoordinateVC.swift; sourceTree = "<group>"; };
 		DA61304924872AE40090508C /* DemoHitTestingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoHitTestingVC.swift; sourceTree = "<group>"; };
 		DA61304B24872B4B0090508C /* DemoCornerRadiusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCornerRadiusVC.swift; sourceTree = "<group>"; };
-		DA61304D24872BB40090508C /* DemoBorderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoBorderVC.swift; sourceTree = "<group>"; };
 		DA61304F24872BD20090508C /* DemoShadowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoShadowVC.swift; sourceTree = "<group>"; };
 		DA61305124872C4A0090508C /* DemoMaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoMaskVC.swift; sourceTree = "<group>"; };
 		DA61305324872CD90090508C /* DemoFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoFilterVC.swift; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 				DA61304724872ABA0090508C /* DemoCoordinateVC.swift */,
 				DA61304924872AE40090508C /* DemoHitTestingVC.swift */,
 				DA61304B24872B4B0090508C /* DemoCornerRadiusVC.swift */,
-				DA61304D24872BB40090508C /* DemoBorderVC.swift */,
 				DA61304F24872BD20090508C /* DemoShadowVC.swift */,
 				DA61305124872C4A0090508C /* DemoMaskVC.swift */,
 				DA61305324872CD90090508C /* DemoFilterVC.swift */,
@@ -244,7 +241,6 @@
 				DA61304424872A320090508C /* DemoCustomDrawingVC.swift in Sources */,
 				DA6ACA7F24A6F6A000A1B073 /* DemoZPositionVC.swift in Sources */,
 				DA6C654124ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift in Sources */,
-				DA61304E24872BB40090508C /* DemoBorderVC.swift in Sources */,
 				DAF9929924B6C5560010569A /* DemoLayoutSublayersOfLayerVC.swift in Sources */,
 				DA61304824872ABA0090508C /* DemoCoordinateVC.swift in Sources */,
 				DA613040248729DE0090508C /* DemoLayerVC.swift in Sources */,

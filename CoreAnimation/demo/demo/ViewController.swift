@@ -9,24 +9,20 @@
 import UIKit
 
 enum DLTitle: String {
-    /// 图层与视图
-    case Layer = "图层与视图"
-    /// 寄宿图
-    case Contents = "寄宿图"
-    /// CustomDrawing
+    case Layer = ".Layer 图层与视图"
+    case Contents = ".Contents 寄宿图"
     case CustomDrawing = "CustomDrawing"
-    case Anchor = "锚点"
-    case Coordinate = "坐标系和坐标转换"
+    case Anchor = ".Anchor 锚点"
+    case Coordinate = ".Coordinate 坐标系和坐标转换"
     case HitTesting = "HitTesting"
     case ZPosition = "ZPosition"
-    case HitTestingAndZPosition = "ZPosition引发的HitTesting问题"
+    case HitTestingAndZPosition = ".HitTestingAndZPosition ZPosition引发的HitTesting问题"
     case LayoutSublayersOfLayer = "LayoutSublayersOfLayer"
-    case CornerRadius = "圆角"
-    case Border = "边框"
-    case Shadow = "阴影"
-    case Mask = "mask蒙板"
-    case Filter = "Filter拉伸过滤"
-    case Alpha = "Alpha"
+    case CornerRadius = ".CornerRadius 圆角和边框"
+    case Shadow = ".Shadow 阴影"
+    case Mask = ".Mask mask蒙板"
+    case Filter = ".Filter Filter拉伸过滤"
+    case Alpha = ".Alpha Alpha"
     case AffineTransform = "CGAffineTransform仿射变换"
     case Transform3D = "CATransform3D变换"
     case Solid = "固体对象"
@@ -41,7 +37,8 @@ enum DLTitle: String {
                 .HitTesting,
                 .HitTestingAndZPosition,
                 .LayoutSublayersOfLayer,
-                .CornerRadius]
+                .CornerRadius,
+                .Shadow]
     }
 }
 
@@ -95,6 +92,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.navigationController?.pushViewController(DemoLayoutSublayersOfLayerVC(), animated: true)
         case DLTitle.CornerRadius.rawValue:
             self.navigationController?.pushViewController(DemoCornerRadiusVC(), animated: true)
+        case DLTitle.Shadow.rawValue:
+            self.navigationController?.pushViewController(DemoShadowVC(), animated: true)
         default:
             print("Not found")
         }

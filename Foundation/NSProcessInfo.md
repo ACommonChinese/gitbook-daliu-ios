@@ -19,8 +19,6 @@ Swift: ProcessInfo
 ### 试验环境, iPhone Simulator
 
 ```swift
-import UIKit
-
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -41,8 +39,10 @@ class ViewController: UIViewController {
         print(processInfo.operatingSystemVersion) // NSOperatingSystemVersion(majorVersion: 13, minorVersion: 5, patchVersion: 0)
         print("---- 操作系统版本号字符串 ----")
         print(processInfo.operatingSystemVersionString) // Version 13.5 (Build 17F61)
-        print("---- 系统启动时间 ----")
-        print(processInfo.systemUptime) // 239200.409383552
+        print("---- The amount of time the system has been awake since the last time it was restarted. ----")
+        print(processInfo.systemUptime) // 241395.17889156903
+        sleep(2)
+        print(processInfo.systemUptime) // 241397.17969977303
         print("---- 是否开启低电量模式 --")
         print(processInfo.isLowPowerModeEnabled) // false or true
     }
