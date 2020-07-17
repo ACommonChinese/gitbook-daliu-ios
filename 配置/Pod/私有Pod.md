@@ -2,6 +2,8 @@
 
 [官网Private Pods](http://guides.cocoapods.org/making/private-cocoapods.html)
 
+参考: [HERE](https://my.oschina.net/llfk/blog/3105887)
+
 总体流程：creating a private repository, letting CocoaPods know where to find it and adding the podspecs to the repository.
 
 我们使用pod install时，会寻找cocoapod官方github上的repository中的podspec并安装库，也可以弄一个自己的repository并把自己的私有库放里面
@@ -63,6 +65,8 @@ git push --tag # 上传tag
 
 ### 3. 创建podspec文件，引用资源
 
+参见[官网](https://guides.cocoapods.org/syntax/podspec.html)
+
 `pod spec create Thinker`
 这会生成Thinker.podspec文件，内容：
 
@@ -82,6 +86,8 @@ Pod::Spec.new do |s|
     s.requires_arc = true
 end
 ```
+
+关于source_files可参见[官网](https://guides.cocoapods.org/syntax/podspec.html#group_file_patterns)
 
 ### 4. 把podspec文件上传到私有索引库
 

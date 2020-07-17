@@ -17,6 +17,7 @@
 		DA5D763A245957D7009BD6BF /* common.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DA5D7639245957D7009BD6BF /* common.xcconfig */; };
 		DA5D763C245957EA009BD6BF /* debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DA5D763B245957EA009BD6BF /* debug.xcconfig */; };
 		DA5D763E245957F6009BD6BF /* release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DA5D763D245957F6009BD6BF /* release.xcconfig */; };
+		DAAE614424C192630032D615 /* uat.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DAAE614324C192630032D615 /* uat.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		DA5D7639245957D7009BD6BF /* common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = common.xcconfig; sourceTree = "<group>"; };
 		DA5D763B245957EA009BD6BF /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
 		DA5D763D245957F6009BD6BF /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
+		DAAE614324C192630032D615 /* uat.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = uat.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				DA5D7639245957D7009BD6BF /* common.xcconfig */,
 				DA5D763B245957EA009BD6BF /* debug.xcconfig */,
 				DA5D763D245957F6009BD6BF /* release.xcconfig */,
+				DAAE614324C192630032D615 /* uat.xcconfig */,
 			);
 			path = MyProject;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				DA5D763E245957F6009BD6BF /* release.xcconfig in Resources */,
 				DA5D76302459576A009BD6BF /* LaunchScreen.storyboard in Resources */,
 				DA5D762D2459576A009BD6BF /* Assets.xcassets in Resources */,
+				DAAE614424C192630032D615 /* uat.xcconfig in Resources */,
 				DA5D762B24595768009BD6BF /* Main.storyboard in Resources */,
 				DA5D763C245957EA009BD6BF /* debug.xcconfig in Resources */,
 				DA5D763A245957D7009BD6BF /* common.xcconfig in Resources */,
@@ -189,6 +193,7 @@
 /* Begin XCBuildConfiguration section */
 		DA5CB845245ADE4600DD45FF /* uat */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAAE614324C192630032D615 /* uat.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -247,6 +252,7 @@
 		};
 		DA5CB846245ADE4600DD45FF /* uat */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAAE614324C192630032D615 /* uat.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BasicURL = "";

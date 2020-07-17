@@ -35,6 +35,9 @@
 		DA61305A24872DC10090508C /* DemoSolidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61305924872DC10090508C /* DemoSolidVC.swift */; };
 		DA6ACA7F24A6F6A000A1B073 /* DemoZPositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6ACA7E24A6F6A000A1B073 /* DemoZPositionVC.swift */; };
 		DA6C654124ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6C654024ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift */; };
+		DA85875524BC866900FEAC7B /* 4.12.png in Resources */ = {isa = PBXBuildFile; fileRef = DA85875424BC866800FEAC7B /* 4.12.png */; };
+		DA85875724BD591100FEAC7B /* DemoNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85875624BD591000FEAC7B /* DemoNavigationController.swift */; };
+		DA85875924BD800700FEAC7B /* Digits.png in Resources */ = {isa = PBXBuildFile; fileRef = DA85875824BD800700FEAC7B /* Digits.png */; };
 		DAF9929924B6C5560010569A /* DemoLayoutSublayersOfLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF9929824B6C5560010569A /* DemoLayoutSublayersOfLayerVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +72,9 @@
 		DA61305924872DC10090508C /* DemoSolidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSolidVC.swift; sourceTree = "<group>"; };
 		DA6ACA7E24A6F6A000A1B073 /* DemoZPositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoZPositionVC.swift; sourceTree = "<group>"; };
 		DA6C654024ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoHitTestingAndZPositionVC.swift; sourceTree = "<group>"; };
+		DA85875424BC866800FEAC7B /* 4.12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.12.png; sourceTree = "<group>"; };
+		DA85875624BD591000FEAC7B /* DemoNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoNavigationController.swift; sourceTree = "<group>"; };
+		DA85875824BD800700FEAC7B /* Digits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Digits.png; sourceTree = "<group>"; };
 		DAF9929824B6C5560010569A /* DemoLayoutSublayersOfLayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoLayoutSublayersOfLayerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +115,8 @@
 				DA61304324872A320090508C /* DemoCustomDrawingVC.swift */,
 				DA19D8702497A161006769F4 /* 2.9.png */,
 				DA19D8722497A4E3006769F4 /* 2.10.png */,
+				DA85875424BC866800FEAC7B /* 4.12.png */,
+				DA85875824BD800700FEAC7B /* Digits.png */,
 			);
 			path = "寄宿图";
 			sourceTree = "<group>";
@@ -135,6 +143,7 @@
 				DA613024248723DB0090508C /* AppDelegate.swift */,
 				DA613026248723DB0090508C /* SceneDelegate.swift */,
 				DA613028248723DB0090508C /* ViewController.swift */,
+				DA85875624BD591000FEAC7B /* DemoNavigationController.swift */,
 				DA61303B248725CD0090508C /* DLCell.swift */,
 				DA61303C248725CD0090508C /* DLCell.xib */,
 				DA19D80824977AD3006769F4 /* 图层与视图 */,
@@ -218,8 +227,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA85875524BC866900FEAC7B /* 4.12.png in Resources */,
 				DA613031248723DD0090508C /* LaunchScreen.storyboard in Resources */,
 				DA61302E248723DD0090508C /* Assets.xcassets in Resources */,
+				DA85875924BD800700FEAC7B /* Digits.png in Resources */,
 				DA19D8732497A4E3006769F4 /* 2.10.png in Resources */,
 				DA61303E248725CD0090508C /* DLCell.xib in Resources */,
 				DA19D8712497A161006769F4 /* 2.9.png in Resources */,
@@ -242,6 +253,7 @@
 				DA6ACA7F24A6F6A000A1B073 /* DemoZPositionVC.swift in Sources */,
 				DA6C654124ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift in Sources */,
 				DAF9929924B6C5560010569A /* DemoLayoutSublayersOfLayerVC.swift in Sources */,
+				DA85875724BD591100FEAC7B /* DemoNavigationController.swift in Sources */,
 				DA61304824872ABA0090508C /* DemoCoordinateVC.swift in Sources */,
 				DA613040248729DE0090508C /* DemoLayerVC.swift in Sources */,
 				DA61305224872C4A0090508C /* DemoMaskVC.swift in Sources */,
@@ -392,7 +404,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2KKR9F9FN;
 				INFOPLIST_FILE = demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -400,6 +414,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = daliu.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -409,7 +424,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2KKR9F9FN;
 				INFOPLIST_FILE = demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -417,6 +434,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = daliu.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

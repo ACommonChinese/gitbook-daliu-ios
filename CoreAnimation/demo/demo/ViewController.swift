@@ -20,8 +20,8 @@ enum DLTitle: String {
     case LayoutSublayersOfLayer = "LayoutSublayersOfLayer"
     case CornerRadius = ".CornerRadius 圆角和边框"
     case Shadow = ".Shadow 阴影"
-    case Mask = ".Mask mask蒙板"
-    case Filter = ".Filter Filter拉伸过滤"
+    case Mask = ".Mask 图层蒙板"
+    case Filter = ".Filter Filter伸缩过滤"
     case Alpha = ".Alpha Alpha"
     case AffineTransform = "CGAffineTransform仿射变换"
     case Transform3D = "CATransform3D变换"
@@ -38,7 +38,9 @@ enum DLTitle: String {
                 .HitTestingAndZPosition,
                 .LayoutSublayersOfLayer,
                 .CornerRadius,
-                .Shadow]
+                .Shadow,
+                .Mask,
+                .Filter]
     }
 }
 
@@ -94,8 +96,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.navigationController?.pushViewController(DemoCornerRadiusVC(), animated: true)
         case DLTitle.Shadow.rawValue:
             self.navigationController?.pushViewController(DemoShadowVC(), animated: true)
+        case DLTitle.Mask.rawValue:
+            self.navigationController?.pushViewController(DemoMaskVC(), animated: true)
+        case DLTitle.Filter.rawValue:
+            let vc = DemoFilterVC()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+            // self.navigationController?.pushViewController(DemoFilterVC(), animated: true)
         default:
             print("Not found")
         }
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portraitUpsideDown
     }
 }

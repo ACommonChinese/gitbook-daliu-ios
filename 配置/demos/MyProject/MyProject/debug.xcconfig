@@ -14,12 +14,10 @@
 // http:\/\/test2api.xiaowei.com/rq
 // xcconfig认为//是注释符，因此需要转义
 // 但是这样通过[[NSBundle mainBundle].infoDictionary objectForKey:@"BasicURL"]得到的结果是未转义的字符串：http:\/\/test2api.xiaowei.com/rq
+// NSLog得到的字符串也是BasicURL
 // 因此建议不要写//
-BasicURL = @"test2api.xiaowei.com/rq"
- 
-// SDK Key
-MOJIE_KEY = @"97XXXXXXXXXXXXXXXXXXXXX1c49"
- 
-IS_PRODUCATION = NO //是否是生产环境
- 
+BASE_URL = @"test2api.debug.com/rq"   // BASE_URL
+SDK_KEY = @"DEBUG_SDK_KEY"              // SDK_KEY
+IS_PRODUCATION = @"NO"                  // 是否试生产环境
+
 #include "common.xcconfig"

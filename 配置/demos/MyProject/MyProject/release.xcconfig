@@ -9,12 +9,8 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-// APP 请求地址
-BasicURL = @"api.xiaowei.com/rq"
- 
-// SDK Key
-MOJIE_KEY = @"f5XXXXXXXXXXXXXXXXXXXXX1c43"
- 
-IS_PRODUCATION = NO //是否试生产环境
- 
+BASE_URL = @"api.release.com/rq" // BASE_URL
+SDK_KEY = @"RELEASE_SDK_KEY"     // SDK_KEY
+IS_PRODUCATION = @"YES"          // 是否试生产环境
+
 #include "common.xcconfig"

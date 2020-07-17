@@ -8,6 +8,10 @@
 
 import UIKit
 
+let screenWidth: CGFloat = {
+    return UIScreen.main.bounds.size.width
+} ()
+
 let isiPhone: Bool = {
     return UIDevice.current.userInterfaceIdiom == .phone
 } ()
