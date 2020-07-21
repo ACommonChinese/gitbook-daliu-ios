@@ -8,9 +8,19 @@
 
 import UIKit
 
-let screenWidth: CGFloat = {
-    return UIScreen.main.bounds.size.width
-} ()
+//let screenWidth: CGFloat = {
+//    return UIScreen.main.bounds.size.width
+//} ()
+
+func getScreenWidth() -> CGFloat {
+    let orientation: UIDeviceOrientation = UIDevice.current.orientation
+    switch orientation {
+    case .landscapeLeft, .landscapeRight:
+        return UIScreen.main.bounds.size.height
+    default:
+        return UIScreen.main.bounds.size.width
+    }
+}
 
 let isiPhone: Bool = {
     return UIDevice.current.userInterfaceIdiom == .phone

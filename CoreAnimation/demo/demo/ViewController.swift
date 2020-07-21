@@ -21,7 +21,7 @@ enum DLTitle: String {
     case CornerRadius = ".CornerRadius 圆角和边框"
     case Shadow = ".Shadow 阴影"
     case Mask = ".Mask 图层蒙板"
-    case Filter = ".Filter Filter伸缩过滤"
+    case Filter = ".Filter 伸缩过滤"
     case Alpha = ".Alpha Alpha"
     case AffineTransform = "CGAffineTransform仿射变换"
     case Transform3D = "CATransform3D变换"
@@ -102,13 +102,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let vc = DemoFilterVC()
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
-            // self.navigationController?.pushViewController(DemoFilterVC(), animated: true)
         default:
             print("Not found")
         }
     }
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portraitUpsideDown
+    override var shouldAutorotate: Bool {
+        return false
     }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
+    
 }

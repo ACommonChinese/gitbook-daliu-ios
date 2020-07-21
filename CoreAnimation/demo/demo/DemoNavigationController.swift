@@ -15,14 +15,14 @@ class DemoNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override var shouldAutorotate: Bool {
         guard let topVC = self.topViewController else {
             return false
         }
         return topVC.shouldAutorotate
     }
-    
+
     //viewController所支持的全部旋转方向
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         guard let topVC = self.topViewController else {
