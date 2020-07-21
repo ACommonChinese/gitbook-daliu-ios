@@ -13,24 +13,24 @@ class DemoFilterVC: UIViewController {
     let hour2: UIView = UIView()
     let minute1: UIView = UIView()
     let minute2: UIView = UIView()
-    let second1: UIView 
+//    let second1: UIView 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.gray
         
-        var digitViews = Array<UIView>()
+//        var digitViews = Array<UIView>()
         
     }
     
-    func addItemViews() {
-        let margin = 20
-        let width = screenWidth / 2 / 6
-        let height = width * 1.5
-        for i in 0..<6 {
-            let view = UIView(frame: CGRectMake(<#T##x: CGFloat##CGFloat#>, <#T##y: CGFloat##CGFloat#>, <#T##width: CGFloat##CGFloat#>, <#T##height: CGFloat##CGFloat#>))
-        }
-    }
+//    func addItemViews() {
+//        let margin = 20
+//        let width = screenWidth / 2 / 6
+//        let height = width * 1.5
+//        for i in 0..<6 {
+//            let view = UIView(frame: CGRectMake(<#T##x: CGFloat##CGFloat#>, <#T##y: CGFloat##CGFloat#>, <#T##width: CGFloat##CGFloat#>, <#T##height: CGFloat##CGFloat#>))
+//        }
+//    }
     
     //MARK: - About rotation
     
