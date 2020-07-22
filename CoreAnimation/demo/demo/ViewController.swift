@@ -22,7 +22,7 @@ enum DLTitle: String {
     case Shadow = ".Shadow 阴影"
     case Mask = ".Mask 图层蒙板"
     case Filter = ".Filter 伸缩过滤"
-    case Alpha = ".Alpha Alpha"
+    case Rasterization = ".Rasterization 组透明"
     case AffineTransform = "CGAffineTransform仿射变换"
     case Transform3D = "CATransform3D变换"
     case Solid = "固体对象"
@@ -40,7 +40,8 @@ enum DLTitle: String {
                 .CornerRadius,
                 .Shadow,
                 .Mask,
-                .Filter]
+                .Filter,
+                .Rasterization]
     }
 }
 
@@ -102,6 +103,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let vc = DemoFilterVC()
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
+        case DLTitle.Rasterization.rawValue:
+            self.navigationController?.pushViewController(DemoRasterizationVC(), animated: true)
         default:
             print("Not found")
         }

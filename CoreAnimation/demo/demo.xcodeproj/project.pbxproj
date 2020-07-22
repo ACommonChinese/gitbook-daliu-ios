@@ -33,6 +33,7 @@
 		DA61305624872D650090508C /* DemoAffineTransformVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61305524872D650090508C /* DemoAffineTransformVC.swift */; };
 		DA61305824872D900090508C /* DemoTransform3DVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61305724872D900090508C /* DemoTransform3DVC.swift */; };
 		DA61305A24872DC10090508C /* DemoSolidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61305924872DC10090508C /* DemoSolidVC.swift */; };
+		DA6619F624C6EAF60082765A /* DemoRasterizationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6619F524C6EAF60082765A /* DemoRasterizationVC.swift */; };
 		DA6ACA7F24A6F6A000A1B073 /* DemoZPositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6ACA7E24A6F6A000A1B073 /* DemoZPositionVC.swift */; };
 		DA6C654124ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6C654024ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift */; };
 		DA85875524BC866900FEAC7B /* 4.12.png in Resources */ = {isa = PBXBuildFile; fileRef = DA85875424BC866800FEAC7B /* 4.12.png */; };
@@ -70,6 +71,7 @@
 		DA61305524872D650090508C /* DemoAffineTransformVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAffineTransformVC.swift; sourceTree = "<group>"; };
 		DA61305724872D900090508C /* DemoTransform3DVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTransform3DVC.swift; sourceTree = "<group>"; };
 		DA61305924872DC10090508C /* DemoSolidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSolidVC.swift; sourceTree = "<group>"; };
+		DA6619F524C6EAF60082765A /* DemoRasterizationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoRasterizationVC.swift; sourceTree = "<group>"; };
 		DA6ACA7E24A6F6A000A1B073 /* DemoZPositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoZPositionVC.swift; sourceTree = "<group>"; };
 		DA6C654024ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoHitTestingAndZPositionVC.swift; sourceTree = "<group>"; };
 		DA85875424BC866800FEAC7B /* 4.12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.12.png; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				DA6C654024ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift */,
 				DAF9929824B6C5560010569A /* DemoLayoutSublayersOfLayerVC.swift */,
 				DA19D86C249797F8006769F4 /* ExtensionUtils.swift */,
+				DA6619F524C6EAF60082765A /* DemoRasterizationVC.swift */,
 				DA61302D248723DD0090508C /* Assets.xcassets */,
 				DA61302F248723DD0090508C /* LaunchScreen.storyboard */,
 				DA613032248723DD0090508C /* Info.plist */,
@@ -245,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA61305A24872DC10090508C /* DemoSolidVC.swift in Sources */,
+				DA6619F624C6EAF60082765A /* DemoRasterizationVC.swift in Sources */,
 				DA12C2E8249C8E18004E0EE7 /* DemoDrawRectVC.swift in Sources */,
 				DA613042248729F50090508C /* DemoContentsVC.swift in Sources */,
 				DA61305624872D650090508C /* DemoAffineTransformVC.swift in Sources */,
