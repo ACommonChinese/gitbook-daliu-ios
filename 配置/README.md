@@ -7,3 +7,4 @@
 - [组件化之Pod私有库制作](https://my.oschina.net/llfk/blog/3105887)
 - [Cocoapods打包framework/静态库的注意点](https://www.jianshu.com/p/54a9fcfe9fce)
 - [Cocoa podspec and path for dependency](https://stackoverflow.com/questions/32581986/cocoa-podspec-and-path-for-dependency/32588068#32588068)
+- [trunk](https://www.cnblogs.com/wengzilin/p/4742530.html)

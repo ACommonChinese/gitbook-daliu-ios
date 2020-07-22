@@ -23,7 +23,7 @@ enum DLTitle: String {
     case Mask = ".Mask 图层蒙板"
     case Filter = ".Filter 伸缩过滤"
     case Rasterization = ".Rasterization 组透明"
-    case AffineTransform = "CGAffineTransform仿射变换"
+    case AffineTransform = ".CGAffineTransform仿射变换"
     case Transform3D = "CATransform3D变换"
     case Solid = "固体对象"
     case ShapeLayer = "CAShapeLayer"
@@ -41,7 +41,8 @@ enum DLTitle: String {
                 .Shadow,
                 .Mask,
                 .Filter,
-                .Rasterization]
+                .Rasterization,
+                .AffineTransform]
     }
 }
 
@@ -105,6 +106,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.present(vc, animated: true, completion: nil)
         case DLTitle.Rasterization.rawValue:
             self.navigationController?.pushViewController(DemoRasterizationVC(), animated: true)
+        case DLTitle.AffineTransform.rawValue:
+            self.navigationController?.pushViewController(DemoAffineTransformVC(), animated: true)
         default:
             print("Not found")
         }
