@@ -2,13 +2,6 @@
 
 参考: 
 
-- [https://www.jianshu.com/p/2eb351b0ce57](https://www.jianshu.com/p/2eb351b0ce57)  
-- [Apple](https://developer.apple.com/library/archive/documentation/Performance/Conceptual/CodeFootprint/CodeFootprint.html#//apple_ref/doc/uid/10000149-SW1)
-- [重要：Low Level Bits](https://lowlevelbits.org/parsing-mach-o-files/)
-- [MachORuntime.pdf](http://math-atlas.sourceforge.net/devel/assembly/MachORuntime.pdf)
-- [https://www.jianshu.com/p/175925ab3355](https://www.jianshu.com/p/175925ab3355)  
-- [http://yulingtianxia.com/blog/2016/10/30/Optimizing-App-Startup-Time/#dyld-%E5%8A%A0%E8%BD%BD-dylib-%E6%96%87%E4%BB%B6](http://yulingtianxia.com/blog/2016/10/30/Optimizing-App-Startup-Time/#dyld-%E5%8A%A0%E8%BD%BD-dylib-%E6%96%87%E4%BB%B6)
-
 ### What is Mach-O file  
 
 Brief description taken from Wikipedia:
