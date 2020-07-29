@@ -56,4 +56,15 @@ class DemoAffineTransformVC: UIViewController, UITableViewDelegate, UITableViewD
         cell.textLabel?.text = type.rawValue
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let type: TransformType = TransformType.all()[indexPath.row]
+        switch type {
+        case .SimpleRotation:
+            self.navigationController?.pushViewController(DemoSimpleRotationVC(), animated: true)
+            print("YES")
+        default:
+            print("NO")
+        }
+    }
 }
