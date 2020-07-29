@@ -1,6 +1,4 @@
-# WKWebView
-
-
+# API介绍
 
 WKWebView是iOS8 出来的浏览器控件, 用来取代UIWebView，使用时import：&lt;WebKit/WebKit.h&gt;
 
@@ -40,7 +38,7 @@ WKWebView是iOS8 出来的浏览器控件, 用来取代UIWebView，使用时impo
 @property (nullable, nonatomic, readonly, copy) NSString *title;
 // 页面加载进度, 一般使用KVO动态获取
 @property (nonatomic, readonly) double estimatedProgress;
-// 可返回的页面列表, 已打开过的网页, 有点类似于navigationController的viewControllers属性
+// 可返回的页面列表, 已打开过的网页, 类似 navigationController 的 viewControllers 属性
 @property (nonatomic, readonly, strong) WKBackForwardList *backForwardList;
 // 页面url
 @property (nullable, nonatomic, readonly, copy) NSURL *URL;
@@ -822,4 +820,3 @@ GitHub地址：[https://github.com/ACommonChinese/ZZSelfLearns/tree/master/JS%E5
 [https://www.cnblogs.com/mafeng/p/7266655.html](https://www.cnblogs.com/mafeng/p/7266655.html)  
 [https://www.jianshu.com/p/833448c30d70](https://www.jianshu.com/p/833448c30d70)
 [https://github.com/MarkStray/OC-JS-WKWebView](https://github.com/MarkStray/OC-JS-WKWebView)
-
