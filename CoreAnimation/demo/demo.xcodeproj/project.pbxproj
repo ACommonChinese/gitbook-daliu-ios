@@ -37,6 +37,7 @@
 		DA6ACA7F24A6F6A000A1B073 /* DemoZPositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6ACA7E24A6F6A000A1B073 /* DemoZPositionVC.swift */; };
 		DA6C654124ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6C654024ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift */; };
 		DA72E4D624D17CC200575B69 /* DemoSimpleRotationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72E4D524D17CC200575B69 /* DemoSimpleRotationVC.swift */; };
+		DA72E4EC24D1C2E900575B69 /* DemoMixTransformVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72E4EB24D1C2E900575B69 /* DemoMixTransformVC.swift */; };
 		DA85875524BC866900FEAC7B /* 4.12.png in Resources */ = {isa = PBXBuildFile; fileRef = DA85875424BC866800FEAC7B /* 4.12.png */; };
 		DA85875724BD591100FEAC7B /* DemoNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85875624BD591000FEAC7B /* DemoNavigationController.swift */; };
 		DA85875924BD800700FEAC7B /* Digits.png in Resources */ = {isa = PBXBuildFile; fileRef = DA85875824BD800700FEAC7B /* Digits.png */; };
@@ -76,6 +77,7 @@
 		DA6ACA7E24A6F6A000A1B073 /* DemoZPositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoZPositionVC.swift; sourceTree = "<group>"; };
 		DA6C654024ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoHitTestingAndZPositionVC.swift; sourceTree = "<group>"; };
 		DA72E4D524D17CC200575B69 /* DemoSimpleRotationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSimpleRotationVC.swift; sourceTree = "<group>"; };
+		DA72E4EB24D1C2E900575B69 /* DemoMixTransformVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoMixTransformVC.swift; sourceTree = "<group>"; };
 		DA85875424BC866800FEAC7B /* 4.12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.12.png; sourceTree = "<group>"; };
 		DA85875624BD591000FEAC7B /* DemoNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoNavigationController.swift; sourceTree = "<group>"; };
 		DA85875824BD800700FEAC7B /* Digits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Digits.png; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			children = (
 				DA61305524872D650090508C /* DemoAffineTransformVC.swift */,
 				DA72E4D524D17CC200575B69 /* DemoSimpleRotationVC.swift */,
+				DA72E4EB24D1C2E900575B69 /* DemoMixTransformVC.swift */,
 			);
 			path = "仿射变换";
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				DA61305624872D650090508C /* DemoAffineTransformVC.swift in Sources */,
 				DA61305424872CD90090508C /* DemoFilterVC.swift in Sources */,
 				DA61304424872A320090508C /* DemoCustomDrawingVC.swift in Sources */,
+				DA72E4EC24D1C2E900575B69 /* DemoMixTransformVC.swift in Sources */,
 				DA6ACA7F24A6F6A000A1B073 /* DemoZPositionVC.swift in Sources */,
 				DA6C654124ABB1660017BA4B /* DemoHitTestingAndZPositionVC.swift in Sources */,
 				DAF9929924B6C5560010569A /* DemoLayoutSublayersOfLayerVC.swift in Sources */,

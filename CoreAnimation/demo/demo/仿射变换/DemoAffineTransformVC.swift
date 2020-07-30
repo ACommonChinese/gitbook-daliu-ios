@@ -10,10 +10,12 @@ import UIKit
 
 enum TransformType: String {
     case SimpleRotation = "旋转45度"
+    case MixTransform = "混合变换"
     
     public static func all() -> [TransformType] {
         return [
-            .SimpleRotation
+            .SimpleRotation,
+            .MixTransform
         ];
     }
 }
@@ -62,9 +64,8 @@ class DemoAffineTransformVC: UIViewController, UITableViewDelegate, UITableViewD
         switch type {
         case .SimpleRotation:
             self.navigationController?.pushViewController(DemoSimpleRotationVC(), animated: true)
-            print("YES")
-        default:
-            print("NO")
+        case .MixTransform:
+            self.navigationController?.pushViewController(DemoMixTransformVC(), animated: true)
         }
     }
 }

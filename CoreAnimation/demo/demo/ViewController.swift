@@ -76,37 +76,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let title: String = self.items[indexPath.row].rawValue
+        let title: DLTitle = self.items[indexPath.row]
         switch title {
-        case DLTitle.Layer.rawValue: //图层与视图
+        case .Layer: //图层与视图
             self.navigationController?.pushViewController(DemoLayerVC(), animated: true)
-        case DLTitle.Contents.rawValue: //寄宿图
+        case .Contents: //寄宿图
             self.navigationController?.pushViewController(DemoContentsVC(), animated: true)
-        case DLTitle.Anchor.rawValue: //锚点
+        case .Anchor: //锚点
             self.navigationController?.pushViewController(DemoAnchorVC(), animated: true)
-        case DLTitle.Coordinate.rawValue: //坐标系和坐标转换
+        case .Coordinate: //坐标系和坐标转换
             self.navigationController?.pushViewController(DemoCoordinateVC(), animated: true)
-        case DLTitle.ZPosition.rawValue: //ZPosition改变图层显示顺序
+        case .ZPosition: //ZPosition改变图层显示顺序
             self.navigationController?.pushViewController(DemoZPositionVC(), animated: true)
-        case DLTitle.HitTesting.rawValue: //CALayer的响应者链相关的东西
+        case .HitTesting: //CALayer的响应者链相关的东西
             self.navigationController?.pushViewController(DemoHitTestingVC(), animated: true)
-        case DLTitle.HitTestingAndZPosition.rawValue: //ZPosition引发的HitTesting问题
+        case .HitTestingAndZPosition: //ZPosition引发的HitTesting问题
             self.navigationController?.pushViewController(DemoHitTestingAndZPositionVC(), animated: true)
-        case DLTitle.LayoutSublayersOfLayer.rawValue:
+        case .LayoutSublayersOfLayer:
             self.navigationController?.pushViewController(DemoLayoutSublayersOfLayerVC(), animated: true)
-        case DLTitle.CornerRadius.rawValue:
+        case .CornerRadius:
             self.navigationController?.pushViewController(DemoCornerRadiusVC(), animated: true)
-        case DLTitle.Shadow.rawValue:
+        case .Shadow:
             self.navigationController?.pushViewController(DemoShadowVC(), animated: true)
-        case DLTitle.Mask.rawValue:
+        case .Mask:
             self.navigationController?.pushViewController(DemoMaskVC(), animated: true)
-        case DLTitle.Filter.rawValue:
+        case .Filter:
             let vc = DemoFilterVC()
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
-        case DLTitle.Rasterization.rawValue:
+        case .Rasterization:
             self.navigationController?.pushViewController(DemoRasterizationVC(), animated: true)
-        case DLTitle.AffineTransform.rawValue:
+        case .AffineTransform:
             self.navigationController?.pushViewController(DemoAffineTransformVC(), animated: true)
         default:
             print("Not found")

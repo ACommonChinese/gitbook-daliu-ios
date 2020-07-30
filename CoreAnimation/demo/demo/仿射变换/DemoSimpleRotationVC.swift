@@ -9,7 +9,11 @@
 import UIKit
 
 class DemoSimpleRotationVC: UIViewController {
+    private let layerView: UIView = UIView()
+    
     override func viewDidLoad() {
+        self.view.backgroundColor = UIColor.gray
+        
         /**
          `UIView`可以通过设置`transform`属性做变换，但实际上它只是封装了内部图层的变换。
          `CALayer`同样也有一个`transform`属性，但它的类型是`CATransform3D`，而不是`CGAffineTransform`，
@@ -18,9 +22,15 @@ class DemoSimpleRotationVC: UIViewController {
          */
         let image: UIImage = UIImage(named: "Snowman")!
         
-        let layerView: UIView = UIView(frame: CGRect.init(x: 0.0, y: 0.0, width: image.size.width, height: image.size.height))
+        layerView.frame = CGRect.init(x: 0.0, y: 0.0, width: image.size.width, height: image.size.height)
+        layerView.backgroundColor = UIColor.white
+        layerView.center = self.view.center
         layerView.layer.contentsGravity = CALayerContentsGravity.resizeAspect
         layerView.layer.contents = image.cgImage
         self.view.addSubview(layerView)
+        
+        //rotate the layer 45 degrees
+        let transform: CGAffineTransform = CGAffineTransform.init(rotationAngle: CGFloat(Float.pi/4))
+        layerView.layer.setAffineTransform(transform)
     }
 }
