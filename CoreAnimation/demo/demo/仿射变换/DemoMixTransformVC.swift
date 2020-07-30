@@ -40,11 +40,16 @@ class DemoMixTransformVC: UIViewController {
         layerView.layer.contentsGravity = CALayerContentsGravity.resizeAspect
         layerView.layer.contents = image.cgImage
         self.view.addSubview(layerView)
+        
+        let label: UILabel = UILabel.init(frame: CGRectMake(0, layerView.frame.maxY + 50, getScreenWidth(), 30))
+        label.textAlignment = .center
+        label.text = "Click"
+        self.view.addSubview(label)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if flag {
-            UIView.animate(withDuration: 1.25) {
+        UIView.animate(withDuration: 1.25, animations: {
+            if self.flag {
                 var transform: CGAffineTransform = CGAffineTransform.identity //create a new transform
                 //transform.scaledBy 方法返回一个新的 CGAffineTransform 对象
                 //You use this function to create a new affine transformation matrix by adding scaling values to an existing affine transform.
@@ -53,11 +58,13 @@ class DemoMixTransformVC: UIViewController {
                 transform = transform.translatedBy(x: 200, y: 0)
                 //apply transform to layer
                 self.layerView.layer.setAffineTransform(transform)
+            } else {
+                UIView.animate(withDuration: 1.25) {
+                    self.layerView.layer.setAffineTransform(CGAffineTransform.identity)
+                }
             }
-        } else {
-            UIView.animate(withDuration: 1.25) {
-                self.layerView.layer.transform = CGAffineTransform.identity
-            }
+        }) { (isEnd) in
+            self.flag = !self.flag
         }
     }
 }

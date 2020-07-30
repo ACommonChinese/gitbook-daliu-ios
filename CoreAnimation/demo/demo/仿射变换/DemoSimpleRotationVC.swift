@@ -12,13 +12,19 @@ class DemoSimpleRotationVC: UIViewController {
     private let layerView: UIView = UIView()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.view.backgroundColor = UIColor.gray
         
         /**
-         `UIView`可以通过设置`transform`属性做变换，但实际上它只是封装了内部图层的变换。
-         `CALayer`同样也有一个`transform`属性，但它的类型是`CATransform3D`，而不是`CGAffineTransform`，
+        - 旋转: CGAffineTransformMakeRotation(CGFloat angle)
+        - 缩放: CGAffineTransformMakeScale(CGFloat sx, CGFloat sy)
+        - 平移: CGAffineTransformMakeTranslation(CGFloat tx, CGFloat ty)
+         
+         `UIView`可以通过设置`transform(CGAffineTransform)`属性做变换，但实际上它只是封装了内部图层的变换
+         `CALayer`同样也有一个`transform`属性，但它的类型是`CATransform3D`，而不是`CGAffineTransform`
          `CALayer`对应于`UIView`的`transform`属性叫做`affineTransform`
-         下面代码使用`affineTransform`对图层做了45度顺时针旋转
+         
+         下面示例子使用`affineTransform`对图层做了45度顺时针旋转
          */
         let image: UIImage = UIImage(named: "Snowman")!
         

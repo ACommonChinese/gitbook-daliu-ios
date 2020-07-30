@@ -11,11 +11,15 @@ import UIKit
 enum TransformType: String {
     case SimpleRotation = "旋转45度"
     case MixTransform = "混合变换"
+    case Theory = "原理"
+    case ShearTransform = ".shear斜切变换"
     
     public static func all() -> [TransformType] {
         return [
             .SimpleRotation,
-            .MixTransform
+            .MixTransform,
+            .Theory,
+            .ShearTransform
         ];
     }
 }
@@ -33,18 +37,6 @@ class DemoAffineTransformVC: UIViewController, UITableViewDelegate, UITableViewD
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellID")
-        
-        /**
-        - 旋转: CGAffineTransformMakeRotation(CGFloat angle)
-        - 缩放: CGAffineTransformMakeScale(CGFloat sx, CGFloat sy)
-        - 平移: CGAffineTransformMakeTranslation(CGFloat tx, CGFloat ty)
-         
-         `UIView`可以通过设置`transform(CGAffineTransform)`属性做变换，但实际上它只是封装了内部图层的变换
-         `CALayer`同样也有一个`transform`属性，但它的类型是`CATransform3D`，而不是`CGAffineTransform`
-         `CALayer`对应于`UIView`的`transform`属性叫做`affineTransform`
-         下面示例子使用`affineTransform`对图层做了45度顺时针旋转
-         */
-        
     }
     
     // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -66,6 +58,10 @@ class DemoAffineTransformVC: UIViewController, UITableViewDelegate, UITableViewD
             self.navigationController?.pushViewController(DemoSimpleRotationVC(), animated: true)
         case .MixTransform:
             self.navigationController?.pushViewController(DemoMixTransformVC(), animated: true)
+        case .Theory:
+            self.navigationController?.pushViewController(DemoTheoryVC(), animated: true)
+        case .ShearTransform:
+            self.navigationController?.pushViewController(DemoShearTransformVC(), animated: true)
         }
     }
 }

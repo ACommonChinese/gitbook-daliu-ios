@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0630BC24D2C59300BA594C /* DemoShearTransformVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0630BB24D2C59300BA594C /* DemoShearTransformVC.swift */; };
+		DA0630BE24D2DA1900BA594C /* DemoTheoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0630BD24D2DA1900BA594C /* DemoTheoryVC.swift */; };
 		DA12C2E8249C8E18004E0EE7 /* DemoDrawRectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12C2E7249C8E18004E0EE7 /* DemoDrawRectVC.swift */; };
 		DA19D86B249794AF006769F4 /* DemoContentsRectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19D86A249794AF006769F4 /* DemoContentsRectVC.swift */; };
 		DA19D86D249797F8006769F4 /* ExtensionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19D86C249797F8006769F4 /* ExtensionUtils.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA0630BB24D2C59300BA594C /* DemoShearTransformVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoShearTransformVC.swift; sourceTree = "<group>"; };
+		DA0630BD24D2DA1900BA594C /* DemoTheoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTheoryVC.swift; sourceTree = "<group>"; };
 		DA12C2E7249C8E18004E0EE7 /* DemoDrawRectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoDrawRectVC.swift; sourceTree = "<group>"; };
 		DA19D86A249794AF006769F4 /* DemoContentsRectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoContentsRectVC.swift; sourceTree = "<group>"; };
 		DA19D86C249797F8006769F4 /* ExtensionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUtils.swift; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 				DA61305524872D650090508C /* DemoAffineTransformVC.swift */,
 				DA72E4D524D17CC200575B69 /* DemoSimpleRotationVC.swift */,
 				DA72E4EB24D1C2E900575B69 /* DemoMixTransformVC.swift */,
+				DA0630BB24D2C59300BA594C /* DemoShearTransformVC.swift */,
+				DA0630BD24D2DA1900BA594C /* DemoTheoryVC.swift */,
 			);
 			path = "仿射变换";
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 				TargetAttributes = {
 					DA613020248723DB0090508C = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1160;
 					};
 				};
 			};
@@ -265,6 +272,7 @@
 				DA6619F624C6EAF60082765A /* DemoRasterizationVC.swift in Sources */,
 				DA12C2E8249C8E18004E0EE7 /* DemoDrawRectVC.swift in Sources */,
 				DA613042248729F50090508C /* DemoContentsVC.swift in Sources */,
+				DA0630BE24D2DA1900BA594C /* DemoTheoryVC.swift in Sources */,
 				DA61305624872D650090508C /* DemoAffineTransformVC.swift in Sources */,
 				DA61305424872CD90090508C /* DemoFilterVC.swift in Sources */,
 				DA61304424872A320090508C /* DemoCustomDrawingVC.swift in Sources */,
@@ -282,6 +290,7 @@
 				DA72E4D624D17CC200575B69 /* DemoSimpleRotationVC.swift in Sources */,
 				DA61305824872D900090508C /* DemoTransform3DVC.swift in Sources */,
 				DA613029248723DB0090508C /* ViewController.swift in Sources */,
+				DA0630BC24D2C59300BA594C /* DemoShearTransformVC.swift in Sources */,
 				DA61304624872A6A0090508C /* DemoAnchorVC.swift in Sources */,
 				DA613025248723DB0090508C /* AppDelegate.swift in Sources */,
 				DA19D86F2497A0E3006769F4 /* DemoContentsCenterVC.swift in Sources */,
@@ -424,6 +433,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2KKR9F9FN;
@@ -437,6 +447,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = daliu.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -446,6 +457,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2KKR9F9FN;
