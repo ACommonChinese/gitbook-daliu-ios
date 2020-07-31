@@ -13,14 +13,16 @@ enum TransformType: String {
     case MixTransform = "混合变换"
     case Theory = "原理"
     case ShearTransform = ".shear斜切变换"
+    case ThreeD = "3D Transform"
     
     public static func all() -> [TransformType] {
         return [
             .SimpleRotation,
             .MixTransform,
             .Theory,
-            .ShearTransform
-        ];
+            .ShearTransform,
+            .ThreeD
+        ]
     }
 }
 
@@ -62,6 +64,8 @@ class DemoAffineTransformVC: UIViewController, UITableViewDelegate, UITableViewD
             self.navigationController?.pushViewController(DemoTheoryVC(), animated: true)
         case .ShearTransform:
             self.navigationController?.pushViewController(DemoShearTransformVC(), animated: true)
+        case .ThreeD:
+            self.navigationController?.pushViewController(Demo3DVC(), animated: true)
         }
     }
 }

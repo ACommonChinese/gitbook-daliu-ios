@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DA0630BC24D2C59300BA594C /* DemoShearTransformVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0630BB24D2C59300BA594C /* DemoShearTransformVC.swift */; };
 		DA0630BE24D2DA1900BA594C /* DemoTheoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0630BD24D2DA1900BA594C /* DemoTheoryVC.swift */; };
+		DA0630C024D3261000BA594C /* Demo3DVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0630BF24D3261000BA594C /* Demo3DVC.swift */; };
 		DA12C2E8249C8E18004E0EE7 /* DemoDrawRectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12C2E7249C8E18004E0EE7 /* DemoDrawRectVC.swift */; };
 		DA19D86B249794AF006769F4 /* DemoContentsRectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19D86A249794AF006769F4 /* DemoContentsRectVC.swift */; };
 		DA19D86D249797F8006769F4 /* ExtensionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19D86C249797F8006769F4 /* ExtensionUtils.swift */; };
@@ -43,12 +44,15 @@
 		DA85875524BC866900FEAC7B /* 4.12.png in Resources */ = {isa = PBXBuildFile; fileRef = DA85875424BC866800FEAC7B /* 4.12.png */; };
 		DA85875724BD591100FEAC7B /* DemoNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85875624BD591000FEAC7B /* DemoNavigationController.swift */; };
 		DA85875924BD800700FEAC7B /* Digits.png in Resources */ = {isa = PBXBuildFile; fileRef = DA85875824BD800700FEAC7B /* Digits.png */; };
+		DAEC9AC224D3FF400065B137 /* Demo3DTheoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC9AC124D3FF400065B137 /* Demo3DTheoryVC.swift */; };
+		DAEC9AC424D41CD60065B137 /* Demo3DCommonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC9AC324D41CD60065B137 /* Demo3DCommonVC.swift */; };
 		DAF9929924B6C5560010569A /* DemoLayoutSublayersOfLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF9929824B6C5560010569A /* DemoLayoutSublayersOfLayerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DA0630BB24D2C59300BA594C /* DemoShearTransformVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoShearTransformVC.swift; sourceTree = "<group>"; };
 		DA0630BD24D2DA1900BA594C /* DemoTheoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTheoryVC.swift; sourceTree = "<group>"; };
+		DA0630BF24D3261000BA594C /* Demo3DVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo3DVC.swift; sourceTree = "<group>"; };
 		DA12C2E7249C8E18004E0EE7 /* DemoDrawRectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoDrawRectVC.swift; sourceTree = "<group>"; };
 		DA19D86A249794AF006769F4 /* DemoContentsRectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoContentsRectVC.swift; sourceTree = "<group>"; };
 		DA19D86C249797F8006769F4 /* ExtensionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUtils.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 		DA85875424BC866800FEAC7B /* 4.12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.12.png; sourceTree = "<group>"; };
 		DA85875624BD591000FEAC7B /* DemoNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoNavigationController.swift; sourceTree = "<group>"; };
 		DA85875824BD800700FEAC7B /* Digits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Digits.png; sourceTree = "<group>"; };
+		DAEC9AC124D3FF400065B137 /* Demo3DTheoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo3DTheoryVC.swift; sourceTree = "<group>"; };
+		DAEC9AC324D41CD60065B137 /* Demo3DCommonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo3DCommonVC.swift; sourceTree = "<group>"; };
 		DAF9929824B6C5560010569A /* DemoLayoutSublayersOfLayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoLayoutSublayersOfLayerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,8 +194,19 @@
 				DA72E4EB24D1C2E900575B69 /* DemoMixTransformVC.swift */,
 				DA0630BB24D2C59300BA594C /* DemoShearTransformVC.swift */,
 				DA0630BD24D2DA1900BA594C /* DemoTheoryVC.swift */,
+				DAEC9AC024D3FD850065B137 /* 3D */,
 			);
 			path = "仿射变换";
+			sourceTree = "<group>";
+		};
+		DAEC9AC024D3FD850065B137 /* 3D */ = {
+			isa = PBXGroup;
+			children = (
+				DA0630BF24D3261000BA594C /* Demo3DVC.swift */,
+				DAEC9AC124D3FF400065B137 /* Demo3DTheoryVC.swift */,
+				DAEC9AC324D41CD60065B137 /* Demo3DCommonVC.swift */,
+			);
+			path = 3D;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +299,8 @@
 				DAF9929924B6C5560010569A /* DemoLayoutSublayersOfLayerVC.swift in Sources */,
 				DA85875724BD591100FEAC7B /* DemoNavigationController.swift in Sources */,
 				DA61304824872ABA0090508C /* DemoCoordinateVC.swift in Sources */,
+				DA0630C024D3261000BA594C /* Demo3DVC.swift in Sources */,
+				DAEC9AC424D41CD60065B137 /* Demo3DCommonVC.swift in Sources */,
 				DA613040248729DE0090508C /* DemoLayerVC.swift in Sources */,
 				DA61305224872C4A0090508C /* DemoMaskVC.swift in Sources */,
 				DA61303D248725CD0090508C /* DLCell.swift in Sources */,
@@ -298,6 +317,7 @@
 				DA613027248723DB0090508C /* SceneDelegate.swift in Sources */,
 				DA61305024872BD20090508C /* DemoShadowVC.swift in Sources */,
 				DA19D86D249797F8006769F4 /* ExtensionUtils.swift in Sources */,
+				DAEC9AC224D3FF400065B137 /* Demo3DTheoryVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
