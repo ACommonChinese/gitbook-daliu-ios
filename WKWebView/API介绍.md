@@ -365,7 +365,6 @@ NSLog(@"%@", [WKWebsiteDataStore allWebsiteDataTypes]);
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
     self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
     [self.view addSubview:self.webView];
