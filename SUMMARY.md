@@ -173,6 +173,7 @@
     * [内存管理](Swift/内存管理.md)
     * [异常处理](Swift/异常处理.md)
     * [defer](Swift/defer.md)
+    * [map](Swift/map.md)
 * [SDWebImage源码剖析](SDWebImage源码剖析/README.md)
     * [SubDemos](SDWebImage源码剖析/SubDemos.md)
     * [缓存](SDWebImage源码剖析/缓存.md)
