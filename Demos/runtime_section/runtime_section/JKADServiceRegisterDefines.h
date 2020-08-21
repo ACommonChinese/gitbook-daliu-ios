@@ -12,8 +12,15 @@
 #define JKADServiceSectName "JKADServices"
 #define JKADDATA(sectname) __attribute((used, section("__DATA,"#sectname" ")))
 
+//JKADServiceRegist(JKBUADService1)
+//JKADServiceRegist(JKBUADService2)
+//JKADServiceRegist(JKBUADService3)
+//JKADServiceRegist(JKBUADService4)
+//JKADServiceRegist(JKBUADService5)
 #define JKADServiceRegist(servicename) \
         char * k##servicename##_service JKADDATA(JKADServices) = ""#servicename"";\
+
+// char *xxxxxxxx __attribute((used, section("__DATA, "MY_SECTION_NAME" "))) = "自定义字符串"
 
 // char *kJKADServices_service __attribute((used, section("__DATA","JKADServices"))) = "JKADServices";
 // 把 JKADServices 放入section __DATA中, sectionName为JKADServices

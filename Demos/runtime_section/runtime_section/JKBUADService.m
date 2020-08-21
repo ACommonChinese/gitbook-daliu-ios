@@ -32,6 +32,8 @@ JKADServiceRegist(JKBUADService5)
 @end
 
 NSArray<NSString *>* JKReadConfiguration(char *sectionName,const struct mach_header *mhp) {
+     // sectionName: JKADServices
+     // 读取名字为 JKADServces 的分区内容
      NSMutableArray *configs = [NSMutableArray array];
         unsigned long size = 0;
     #ifndef __LP64__
@@ -56,8 +58,10 @@ NSArray<NSString *>* JKReadConfiguration(char *sectionName,const struct mach_hea
 
 static void dyld_callback(const struct mach_header *mhp, intptr_t vmaddr_slide)
 {
+    printf("did called!!!!\n");
+    
     //register services
-    NSArray<NSString *> *services = JKReadConfiguration(JKADServiceSectName,mhp);
+    NSArray<NSString *> *services = JKReadConfiguration(JKADServiceSectName,mhp); // #define JKADServiceSectName "JKADServices"
     for (NSString *serviceName in services) {
         Class cls;
         if (serviceName) {
@@ -72,5 +76,6 @@ static void dyld_callback(const struct mach_header *mhp, intptr_t vmaddr_slide)
 
 __attribute__((constructor)) // main之前调用
 void initJKADService() {
+    //_dyld_register_func_for_add_image(<#void (*func)(const struct mach_header *, intptr_t)#>)
     _dyld_register_func_for_add_image(dyld_callback);
 }
